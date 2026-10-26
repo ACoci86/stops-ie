@@ -1,0 +1,90 @@
+/* Brand colours, taken from the logo. Use var(--ink) etc. anywhere below. */
+:root {
+  --ink: #111111;
+  --green: #009e73;
+  --red: #d1242f;
+  --grey: #9a9a9a;
+  --line: #e5e5e5;
+}
+
+/* Reset. Make the page fill the window with no default margins. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+/* The app is a column: header on top, map fills the rest. */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.header p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Popup text */
+.maplibregl-popup-content {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Wrapper so an error message can sit on top of the map */
+.map-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+/* MapLibre's stylesheet sets position on this div, so we size it with
+   width/height instead of absolute positioning. */
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-error {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fff3f3;
+  border: 1px solid #d1242f;
+  color: #8a0f18;
+  font-size: 0.9rem;
+  z-index: 10;
+}
