@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 30 1056 215">
+  <title>STOPS</title>
+  <g id="Symbol">
+    <g id="Frame_Modules" data-name="Frame Modules" data-vc-layer="sublayer">
+      <path id="Top_Left_Corner" data-name="Top Left Corner" d="M54 40 L80 40 L80 80 L40 80 L40 54 C40 46.268 46.268 40 54 40 Z" fill="#111111" />
+      <path id="Top_Bar" data-name="Top Bar" d="M82 40 L214 40 L214 80 L82 80 Z" fill="#111111" />
+      <path id="Top_Right_Corner" data-name="Top Right Corner" d="M216 40 L226 40 C244.778 40 260 55.222 260 74 L260 80 L216 80 Z" fill="#111111" />
+      <path id="Left_Column" data-name="Left Column" d="M40 82 L80 82 L80 158 L40 158 Z" fill="#111111" />
+      <path id="Right_Column_Upper" data-name="Right Column Upper" d="M216 82 L260 82 L260 158 L216 158 Z" fill="#111111" />
+      <path id="Right_Column_Lower" data-name="Right Column Lower" d="M216 160 L260 160 L260 246 L216 246 Z" fill="#111111" />
+      <path id="Bottom_Bar" data-name="Bottom Bar" d="M40 248 L214 248 L214 275 L40 275 Z" fill="#111111" />
+      <path id="Bottom_Right_Corner" data-name="Bottom Right Corner" d="M216 248 L260 248 L260 275 L216 275 Z" fill="#111111" />
+    </g>
+    <g id="Stop_Pin" data-name="Stop Pin" data-vc-layer="sublayer">
+      <path id="Pin_Stem" data-name="Pin Stem" d="M141 178 L155 178 L155 248 L141 248 Z" fill="#111111" />
+      <path id="Pin_Head___Transit_Green" data-name="Pin Head – Transit Green" d="M113 145 C113 125.67 128.67 110 148 110 C167.33 110 183 125.67 183 145 C183 164.33 167.33 180 148 180 C128.67 180 113 164.33 113 145 Z" fill="#009e73" />
+    </g>
+  </g>
+  <g id="Wordmark">
+    <g id="S__1_" data-name="S (1)" data-vc-layer="sublayer">
+      <path id="S__1__Top_Bar" data-name="S (1) Top Bar" d="M321 71 L433 71 L433 111 L291 111 L291 101 C291 84.431 304.431 71 321 71 Z" fill="#111111" />
+      <path id="S__1__Upper_Stem___Spine" data-name="S (1) Upper Stem + Spine" d="M291 113 L331 113 L331 168 L291 168 Z" fill="#111111" />
+      <path id="S__1__Spine" data-name="S (1) Spine" d="M333 128 L433 128 L433 168 L333 168 Z" fill="#111111" />
+      <path id="S__1__Lower_Stem" data-name="S (1) Lower Stem" d="M393 170 L433 170 L433 195 C433 211.569 419.569 225 403 225 L393 225 Z" fill="#111111" />
+      <path id="S__1__Bottom_Bar" data-name="S (1) Bottom Bar" d="M291 185 L391 185 L391 225 L291 225 Z" fill="#111111" />
+    </g>
+    <g id="T" data-vc-layer="sublayer">
+      <path id="T_Crossbar" data-name="T Crossbar" d="M446 71 L593 71 L593 111 L446 111 Z" fill="#111111" />
+      <path id="T_Stem" data-name="T Stem" d="M499.5 113 L539.5 113 L539.5 225 L499.5 225 Z" fill="#111111" />
+    </g>
+    <g id="O" data-vc-layer="sublayer">
+      <path id="O_Left" data-name="O Left" d="M644 71 L648 71 L648 225 L644 225 C624.117 225 608 208.883 608 189 L608 107 C608 87.117 624.117 71 644 71 Z" fill="#111111" />
+      <path id="O_Top" data-name="O Top" d="M650 71 L721 71 L721 111 L650 111 Z" fill="#111111" />
+      <path id="O_Bottom" data-name="O Bottom" d="M650 185 L721 185 L721 225 L650 225 Z" fill="#111111" />
+      <path id="O_Right" data-name="O Right" d="M723 71 L727 71 C746.883 71 763 87.117 763 107 L763 189 C763 208.883 746.883 225 727 225 L723 225 Z" fill="#111111" />
+    </g>
+    <g id="P" data-vc-layer="sublayer">
+      <path id="P_Stem" data-name="P Stem" d="M781 71 L821 71 L821 225 L781 225 Z" fill="#111111" />
+      <path id="P_Bowl_Top" data-name="P Bowl Top" d="M823 71 L881 71 L881 109 L823 109 Z" fill="#111111" />
+      <path id="P_Bowl_Bottom" data-name="P Bowl Bottom" d="M823 147 L881 147 L881 185 L823 185 Z" fill="#111111" />
+      <path id="P_Bowl_Right" data-name="P Bowl Right" d="M883 71 L887 71 C906.883 71 923 87.117 923 107 L923 163 C923 175.151 913.151 185 901 185 L883 185 Z" fill="#111111" />
+    </g>
+    <g id="S__2_" data-name="S (2)" data-vc-layer="sublayer">
+      <path id="S__2__Top_Bar" data-name="S (2) Top Bar" d="M968 71 L1076 71 L1076 111 L938 111 L938 101 C938 84.431 951.431 71 968 71 Z" fill="#111111" />
+      <path id="S__2__Upper_Stem___Spine" data-name="S (2) Upper Stem + Spine" d="M938 113 L978 113 L978 168 L938 168 Z" fill="#111111" />
+      <path id="S__2__Spine" data-name="S (2) Spine" d="M980 128 L1076 128 L1076 168 L980 168 Z" fill="#111111" />
+      <path id="S__2__Lower_Stem" data-name="S (2) Lower Stem" d="M1036 170 L1076 170 L1076 195 C1076 211.569 1062.57 225 1046 225 L1036 225 Z" fill="#111111" />
+      <path id="S__2__Bottom_Bar" data-name="S (2) Bottom Bar" d="M938 185 L1034 185 L1034 225 L938 225 Z" fill="#111111" />
+    </g>
+  </g>
+  </svg>

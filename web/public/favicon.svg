@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 27 260 260">
+  <title>STOPS</title>
+  <g id="Symbol">
+    <g id="Frame_Modules" data-name="Frame Modules" data-vc-layer="sublayer">
+      <path id="Top_Left_Corner" data-name="Top Left Corner" d="M54 40 L80 40 L80 80 L40 80 L40 54 C40 46.268 46.268 40 54 40 Z" fill="#111111" />
+      <path id="Top_Bar" data-name="Top Bar" d="M82 40 L214 40 L214 80 L82 80 Z" fill="#111111" />
+      <path id="Top_Right_Corner" data-name="Top Right Corner" d="M216 40 L226 40 C244.778 40 260 55.222 260 74 L260 80 L216 80 Z" fill="#111111" />
+      <path id="Left_Column" data-name="Left Column" d="M40 82 L80 82 L80 158 L40 158 Z" fill="#111111" />
+      <path id="Right_Column_Upper" data-name="Right Column Upper" d="M216 82 L260 82 L260 158 L216 158 Z" fill="#111111" />
+      <path id="Right_Column_Lower" data-name="Right Column Lower" d="M216 160 L260 160 L260 246 L216 246 Z" fill="#111111" />
+      <path id="Bottom_Bar" data-name="Bottom Bar" d="M40 248 L214 248 L214 275 L40 275 Z" fill="#111111" />
+      <path id="Bottom_Right_Corner" data-name="Bottom Right Corner" d="M216 248 L260 248 L260 275 L216 275 Z" fill="#111111" />
+    </g>
+    <g id="Stop_Pin" data-name="Stop Pin" data-vc-layer="sublayer">
+      <path id="Pin_Stem" data-name="Pin Stem" d="M141 178 L155 178 L155 248 L141 248 Z" fill="#111111" />
+      <path id="Pin_Head___Transit_Green" data-name="Pin Head – Transit Green" d="M113 145 C113 125.67 128.67 110 148 110 C167.33 110 183 125.67 183 145 C183 164.33 167.33 180 148 180 C128.67 180 113 164.33 113 145 Z" fill="#009e73" />
+    </g>
+  </g>
+  </svg>
