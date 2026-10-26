@@ -1,7 +1,7 @@
 """
 Clean the NaPTIMFS spreadsheet into a GeoJSON file of Irish bus stops.
 
-Input:  data/raw/naptimfs.xlsx   (downloaded from projects.bibby.ie/naptimfs)
+Input:  data/raw/naptimfs.xlsx
 Output: data/processed/stops.geojson
 
 Run from the project root:
@@ -9,169 +9,161 @@ Run from the project root:
 """
 
 import json
-from pathlib import Path
+import os
 
 import pandas as pd
 
-# ---------------------------------------------------------------------------
-# 1. Paths
-# ---------------------------------------------------------------------------
-# Path(__file__) is this script. .parent.parent walks up to the project root,
-# so the script works no matter which folder you run it from.
-ROOT = Path(__file__).resolve().parent.parent
-RAW = ROOT / "data" / "raw" / "naptimfs.xlsx"
-OUT = ROOT / "data" / "processed" / "stops.geojson"
+INPUT_FILE = "data/raw/naptimfs.xlsx"
+OUTPUT_FILE = "data/processed/stops.geojson"
+
 
 # ---------------------------------------------------------------------------
-# 2. Load
+# Step 1. Load the spreadsheet
 # ---------------------------------------------------------------------------
-print(f"Reading {RAW.name} ...")
-df = pd.read_excel(RAW, sheet_name="NaPTIMFS_Database")
-print(f"  {len(df):,} rows in the spreadsheet")
+print("Reading", INPUT_FILE)
+df = pd.read_excel(INPUT_FILE, sheet_name="NaPTIMFS_Database")
+print("Rows in spreadsheet:", len(df))
 
-# ---------------------------------------------------------------------------
-# 3. Filter down to real, active, mappable bus stops
-# ---------------------------------------------------------------------------
-# Rows with no coordinates are PTIMS records with no matching stop. Drop them.
-df = df[df["Latitude"].notna() & df["Longitude"].notna()]
-print(f"  {len(df):,} rows have coordinates")
-
-# Only active stops. 'pending' and 'inactive' are not in service.
-df = df[df["Status"] == "active"]
-print(f"  {len(df):,} rows are active")
-
-# BCT is the NaPTAN code for a bus stop. Everything else is rail, ferry, taxi...
-df = df[df["StopType"] == "BCT"]
-print(f"  {len(df):,} rows are bus stops (BCT)")
-
-# Every stop needs an ID. AtcoCode is the national stop identifier.
-df = df[df["AtcoCode"].notna()]
-df = df.drop_duplicates(subset="AtcoCode")
-print(f"  {len(df):,} rows have a unique AtcoCode")
 
 # ---------------------------------------------------------------------------
-# 4. Turn 0/1 facility flags into yes / no / unknown
+# Step 2. Keep only real, active bus stops
 # ---------------------------------------------------------------------------
-# The key finding from exploring the data: when a stop has not been surveyed,
-# every facility is recorded as 0. That means "nobody checked", not "absent".
-# So a facility is only a real "no" if the stop was surveyed.
-surveyed = df["PTIMS_IsSurveyed"] == 1
+# Each line keeps the rows where the condition is true and throws away the rest.
 
-def facility(column: str) -> pd.Series:
-    """Map a PTIMS 0/1 column to 'yes', 'no' or 'unknown'."""
-    flag = df[column]
-    return pd.Series(
-        # numpy-style nested where: surveyed & 1 -> yes, surveyed & 0 -> no, else unknown
-        [
-            "unknown" if not s or pd.isna(f) else ("yes" if f == 1 else "no")
-            for s, f in zip(surveyed, flag)
-        ],
-        index=df.index,
-    )
+df = df[df["Latitude"].notna()]          # must have coordinates
+df = df[df["Status"] == "active"]        # must be in service
+df = df[df["StopType"] == "BCT"]         # BCT = bus stop. Others are rail, ferry, taxi...
+df = df[df["AtcoCode"].notna()]          # must have an ID
+df = df.drop_duplicates("AtcoCode")      # one row per stop
 
-FACILITIES = {
-    "shelter":    "PTIMS_hasShelter",
-    "bench":      "PTIMS_Bench",
-    "rtpi":       "PTIMS_hasRTPI",              # real-time passenger information display
-    "wheelchair": "PTIMS_WheelchairAccessibility",
-    "footpath":   "PTIMS_FootpathToStop",
-    "kerb":       "PTIMS_CastleKerbing",         # raised kerb for level boarding
-    "step":       "PTIMS_StepAtStop",
-    "bin":        "PTIMS_Bin",
-    "bike_stand": "PTIMS_BikeStand",
-}
-for key, column in FACILITIES.items():
-    df[key] = facility(column)
+print("Rows after filtering:", len(df))
+
 
 # ---------------------------------------------------------------------------
-# 5. Tidy the other fields we want on the map
+# Step 3. Helper functions
 # ---------------------------------------------------------------------------
-# Routes come as "30|32|X1". Split into a list. Missing -> empty list.
-df["routes"] = df["GTFS_Routes"].fillna("").apply(
-    lambda s: [r.strip() for r in str(s).split("|") if r.strip()]
-)
 
-# Average weekday departures. Missing means the stop has no timetable data.
-df["departures_weekday"] = df["Average weekday departures"].round().astype("Int64")
+def is_missing(value):
+    """True if the cell is empty."""
+    return pd.isna(value)
 
-# NTA accessibility rating: A+, A, B or C. Only meaningful if surveyed.
-df["rating"] = df["PTIMS_UD_Calculated"].where(surveyed)
 
-# County names arrive in capitals: "DUBLIN CITY". Title-case them.
-df["county"] = df["County"].fillna("").str.title().replace("", None)
-df["lea"] = df["Local Electoral Area"].fillna("").str.title().replace("", None)
-
-# Urban if the stop falls inside a CSO urban area, else rural.
-df["urban"] = df["Urban Area (Prioritized)"].notna()
-
-# Distance between the two coordinate sets. Large gaps mean a doubtful join.
-df["coord_gap_m"] = df["Meters_Between_NaPTAN_PTIMS"].round().astype("Int64")
-
-# ---------------------------------------------------------------------------
-# 6. Build GeoJSON
-# ---------------------------------------------------------------------------
-# GeoJSON is just JSON in a fixed shape: a FeatureCollection holding Features,
-# each with a geometry (the point) and properties (everything else).
-
-def clean(value):
-    """Convert pandas missing values to None so json can write them as null."""
-    if value is pd.NA or (isinstance(value, float) and pd.isna(value)):
+def text_or_none(value):
+    """Return the text, or None if the cell is empty. JSON writes None as null."""
+    if is_missing(value):
         return None
-    return value
+    return str(value)
+
+
+def number_or_none(value):
+    """Return a whole number, or None if the cell is empty."""
+    if is_missing(value):
+        return None
+    return int(round(value))
+
+
+def yes_no_unknown(row, column):
+    """
+    Turn a 0/1 facility flag into "yes", "no" or "unknown".
+
+    Important: if the stop was never surveyed, every flag is 0.
+    That means "nobody checked", not "absent". So we say "unknown".
+    """
+    if row["PTIMS_IsSurveyed"] != 1:
+        return "unknown"
+    if row[column] == 1:
+        return "yes"
+    return "no"
+
+
+def split_routes(value):
+    """Turn "30 | 32 | X1" into ["30", "32", "X1"]."""
+    if is_missing(value):
+        return []
+    routes = []
+    for part in str(value).split("|"):
+        part = part.strip()          # remove spaces around each route
+        if part != "":
+            routes.append(part)
+    return routes
+
+
+# ---------------------------------------------------------------------------
+# Step 4. Build one GeoJSON feature per stop
+# ---------------------------------------------------------------------------
+# GeoJSON is plain JSON in a fixed shape:
+#   a FeatureCollection, holding a list of Features,
+#   each with a geometry (the point) and properties (everything else).
 
 features = []
+
 for _, row in df.iterrows():
-    props = {
+
+    surveyed = row["PTIMS_IsSurveyed"] == 1
+
+    properties = {
         "id": row["AtcoCode"],
-        "name": clean(row["CommonName"]),
-        "name_ga": clean(row["CommonNameGA"]),
-        "street": clean(row["Street"]),
-        "county": clean(row["county"]),
-        "lea": clean(row["lea"]),
-        "urban": bool(row["urban"]),
-        "surveyed": bool(row["PTIMS_IsSurveyed"] == 1),
-        "rating": clean(row["rating"]),
-        "routes": row["routes"],
-        "departures_weekday": clean(row["departures_weekday"]),
-        "coord_gap_m": clean(row["coord_gap_m"]),
-        "modified": clean(row["ModificationDateTime"]),
+        "name": text_or_none(row["CommonName"]),
+        "name_ga": text_or_none(row["CommonNameGA"]),
+        "street": text_or_none(row["Street"]),
+        "county": text_or_none(row["County"]),
+        "lea": text_or_none(row["Local Electoral Area"]),
+        "urban": not is_missing(row["Urban Area (Prioritized)"]),
+        "surveyed": surveyed,
+        "rating": text_or_none(row["PTIMS_UD_Calculated"]) if surveyed else None,
+        "routes": split_routes(row["GTFS_Routes"]),
+        "departures_weekday": number_or_none(row["Average weekday departures"]),
+        "coord_gap_m": number_or_none(row["Meters_Between_NaPTAN_PTIMS"]),
+        "modified": text_or_none(row["ModificationDateTime"]),
+
+        # Facilities. Each is "yes", "no" or "unknown".
+        "shelter": yes_no_unknown(row, "PTIMS_hasShelter"),
+        "bench": yes_no_unknown(row, "PTIMS_Bench"),
+        "rtpi": yes_no_unknown(row, "PTIMS_hasRTPI"),            # real-time display
+        "wheelchair": yes_no_unknown(row, "PTIMS_WheelchairAccessibility"),
+        "footpath": yes_no_unknown(row, "PTIMS_FootpathToStop"),
+        "kerb": yes_no_unknown(row, "PTIMS_CastleKerbing"),       # raised kerb
+        "step": yes_no_unknown(row, "PTIMS_StepAtStop"),
+        "bin": yes_no_unknown(row, "PTIMS_Bin"),
+        "bike_stand": yes_no_unknown(row, "PTIMS_BikeStand"),
     }
-    for key in FACILITIES:
-        props[key] = row[key]
 
-    # Int64 values need converting to plain int for json
-    for k, v in props.items():
-        if hasattr(v, "item"):
-            props[k] = v.item()
+    # County names arrive in capitals: "DUBLIN CITY". Make them "Dublin City".
+    if properties["county"] is not None:
+        properties["county"] = properties["county"].title()
+    if properties["lea"] is not None:
+        properties["lea"] = properties["lea"].title()
 
-    features.append({
+    feature = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
             # GeoJSON order is [longitude, latitude]. 5 decimals is about 1 metre.
             "coordinates": [round(row["Longitude"], 5), round(row["Latitude"], 5)],
         },
-        "properties": props,
-    })
+        "properties": properties,
+    }
+    features.append(feature)
 
+
+# ---------------------------------------------------------------------------
+# Step 5. Write the file
+# ---------------------------------------------------------------------------
 collection = {"type": "FeatureCollection", "features": features}
 
-OUT.parent.mkdir(parents=True, exist_ok=True)
-with open(OUT, "w", encoding="utf-8") as f:
-    # separators with no spaces keeps the file small
-    json.dump(collection, f, ensure_ascii=False, separators=(",", ":"))
+os.makedirs("data/processed", exist_ok=True)
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(collection, f, ensure_ascii=False)
 
-size_mb = OUT.stat().st_size / 1_000_000
-print(f"\nWrote {len(features):,} stops to {OUT.relative_to(ROOT)} ({size_mb:.1f} MB)")
+print("Wrote", len(features), "stops to", OUTPUT_FILE)
+
 
 # ---------------------------------------------------------------------------
-# 7. Quick summary so we can sanity-check every run
+# Step 6. Print a summary so we can sanity-check each run
 # ---------------------------------------------------------------------------
-print("\nFacility counts:")
-for key in FACILITIES:
-    counts = df[key].value_counts()
-    print(f"  {key:11s} yes={counts.get('yes', 0):6,}  no={counts.get('no', 0):6,}  unknown={counts.get('unknown', 0):6,}")
-
-print(f"\nSurveyed: {surveyed.sum():,} of {len(df):,}")
-print(f"Urban: {df['urban'].sum():,}   Rural: {(~df['urban']).sum():,}")
-print(f"Coordinate gap over 300 m: {(df['coord_gap_m'] > 300).sum():,} stops")
+print()
+for facility in ["shelter", "bench", "rtpi", "wheelchair", "footpath", "kerb", "step", "bin", "bike_stand"]:
+    yes = sum(1 for f in features if f["properties"][facility] == "yes")
+    no = sum(1 for f in features if f["properties"][facility] == "no")
+    unknown = sum(1 for f in features if f["properties"][facility] == "unknown")
+    print(f"{facility:11s} yes={yes:6d}  no={no:6d}  unknown={unknown:6d}")
