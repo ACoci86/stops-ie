@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+
+# Node
+node_modules/
+dist/
+
+# Environment secrets
+.env
+.env.*
+
+# Raw downloaded data (too big, re-downloadable)
+data/raw/
+
+# Private notes
+docs/STOPS_conversation.md
+
+# Editor and OS
+.vscode/
+.DS_Store
