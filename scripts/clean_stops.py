@@ -88,7 +88,7 @@ for key, column in FACILITIES.items():
 # ---------------------------------------------------------------------------
 # Routes come as "30|32|X1". Split into a list. Missing -> empty list.
 df["routes"] = df["GTFS_Routes"].fillna("").apply(
-    lambda s: [r for r in str(s).split("|") if r]
+    lambda s: [r.strip() for r in str(s).split("|") if r.strip()]
 )
 
 # Average weekday departures. Missing means the stop has no timetable data.
