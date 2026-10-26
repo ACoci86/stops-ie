@@ -19,3 +19,6 @@ docs/STOPS_conversation.md
 # Editor and OS
 .vscode/
 .DS_Store
+
+# Processed data (regenerate with scripts/clean_stops.py)
+data/processed/
