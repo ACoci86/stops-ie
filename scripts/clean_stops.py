@@ -113,7 +113,6 @@ for _, row in df.iterrows():
         "rating": text_or_none(row["PTIMS_UD_Calculated"]) if surveyed else None,
         "routes": split_routes(row["GTFS_Routes"]),
         "departures_weekday": number_or_none(row["Average weekday departures"]),
-        "coord_gap_m": number_or_none(row["Meters_Between_NaPTAN_PTIMS"]),
         "modified": text_or_none(row["ModificationDateTime"]),
 
         # Facilities. Each is "yes", "no" or "unknown".
@@ -167,3 +166,68 @@ for facility in ["shelter", "bench", "rtpi", "wheelchair", "footpath", "kerb", "
     no = sum(1 for f in features if f["properties"][facility] == "no")
     unknown = sum(1 for f in features if f["properties"][facility] == "unknown")
     print(f"{facility:11s} yes={yes:6d}  no={no:6d}  unknown={unknown:6d}")
+
+
+# ---------------------------------------------------------------------------
+# Step 7. County summary, for the "Counties" view on the website
+# ---------------------------------------------------------------------------
+# For each county: how many stops, how many surveyed, how many have each
+# facility, the map area to zoom to, and the busiest stops with no shelter.
+
+FACILITY_KEYS = ["shelter", "bench", "rtpi", "wheelchair"]
+counties = {}
+
+for f in features:
+    p = f["properties"]
+    name = p["county"] or "Unknown"
+    lon, lat = f["geometry"]["coordinates"]
+
+    if name not in counties:
+        counties[name] = {
+            "county": name,
+            "stops": 0,
+            "surveyed": 0,
+            "bbox": [lon, lat, lon, lat],   # west, south, east, north
+            "busy_no_shelter": [],
+        }
+        for key in FACILITY_KEYS:
+            counties[name][key] = {"yes": 0, "no": 0}
+
+    c = counties[name]
+    c["stops"] += 1
+    if p["surveyed"]:
+        c["surveyed"] += 1
+    for key in FACILITY_KEYS:
+        if p[key] == "yes":
+            c[key]["yes"] += 1
+        elif p[key] == "no":
+            c[key]["no"] += 1
+
+    # grow the bounding box to include this stop
+    c["bbox"][0] = min(c["bbox"][0], lon)
+    c["bbox"][1] = min(c["bbox"][1], lat)
+    c["bbox"][2] = max(c["bbox"][2], lon)
+    c["bbox"][3] = max(c["bbox"][3], lat)
+
+    if p["shelter"] == "no" and p["departures_weekday"] is not None:
+        c["busy_no_shelter"].append({
+            "id": p["id"],
+            "name": p["name"],
+            "departures": p["departures_weekday"],
+            "lng": lon,
+            "lat": lat,
+        })
+
+# keep only the five busiest shelterless stops per county
+for c in counties.values():
+    c["busy_no_shelter"].sort(key=lambda s: s["departures"], reverse=True)
+    c["busy_no_shelter"] = c["busy_no_shelter"][:5]
+
+county_list = sorted(counties.values(), key=lambda c: c["county"])
+
+COUNTIES_FILE = "data/processed/counties.json"
+with open(COUNTIES_FILE, "w", encoding="utf-8") as f:
+    json.dump(county_list, f, ensure_ascii=False, indent=1)
+
+print()
+print("Wrote", len(county_list), "counties to", COUNTIES_FILE)

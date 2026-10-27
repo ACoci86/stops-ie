@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>footpath</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="footpath" data-vc-layer="sublayer">
+      <path id="Left_Sole" data-name="Left Sole" d="M14 13 L14 13 C16.762 13 19 15.239 19 18 L19 22 C19 24.762 16.762 27 14 27 L14 27 C11.238 27 9 24.762 9 22 L9 18 C9 15.239 11.238 13 14 13 Z" fill="#111111"/>
+      <path id="Left_Heel" data-name="Left Heel" d="M13.5 29 L14.5 29 C16.433 29 18 30.567 18 32.5 L18 32.5 C18 34.433 16.433 36 14.5 36 L13.5 36 C11.567 36 10 34.433 10 32.5 L10 32.5 C10 30.567 11.567 29 13.5 29 Z" fill="#111111"/>
+      <path id="Right_Sole" data-name="Right Sole" d="M33 4 L33 4 C35.762 4 38 6.239 38 9 L38 13 C38 15.761 35.762 18 33 18 L33 18 C30.238 18 28 15.761 28 13 L28 9 C28 6.239 30.238 4 33 4 Z" fill="#009e73"/>
+      <path id="Right_Heel" data-name="Right Heel" d="M32.5 20 L33.5 20 C35.433 20 37 21.567 37 23.5 L37 23.5 C37 25.433 35.433 27 33.5 27 L32.5 27 C30.567 27 29 25.433 29 23.5 L29 23.5 C29 21.567 30.567 20 32.5 20 Z" fill="#009e73"/>
+      <path id="Ground" d="M6 40 L42 40 C43.105 40 44 40.895 44 42 L44 42 C44 43.105 43.105 44 42 44 L6 44 C4.895 44 4 43.105 4 42 L4 42 C4 40.895 4.895 40 6 40 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

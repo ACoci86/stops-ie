@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>departures</title>
+  <g id="Service">
+    <g id="departures" data-vc-layer="sublayer">
+      <path id="Roof" d="M16 4 L32 4 C35.314 4 38 6.686 38 10 L38 10 L10 10 L10 10 C10 6.686 12.686 4 16 4 Z" fill="#111111"/>
+      <path id="Pillar_Left" data-name="Pillar Left" d="M10 12 L16 12 L16 24 L10 24 Z" fill="#111111"/>
+      <path id="Window" d="M18 12 L30 12 L30 24 L18 24 Z" fill="#009e73"/>
+      <path id="Pillar_Right" data-name="Pillar Right" d="M32 12 L38 12 L38 24 L32 24 Z" fill="#111111"/>
+      <path id="Lower_Body" data-name="Lower Body" d="M10 26 L38 26 L38 36 C38 37.105 37.105 38 36 38 L12 38 C10.895 38 10 37.105 10 36 Z" fill="#111111"/>
+      <path id="Wheel_Left" data-name="Wheel Left" d="M12 40 L19 40 L19 42.5 C19 43.328 18.328 44 17.5 44 L13.5 44 C12.671 44 12 43.328 12 42.5 Z" fill="#111111"/>
+      <path id="Wheel_Right" data-name="Wheel Right" d="M29 40 L36 40 L36 42.5 C36 43.328 35.328 44 34.5 44 L30.5 44 C29.672 44 29 43.328 29 42.5 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

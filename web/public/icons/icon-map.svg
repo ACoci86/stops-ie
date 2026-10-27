@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>icon-map</title>
+  <g id="UI_Icons" data-name="UI Icons">
+    <g id="icon-map" data-vc-layer="sublayer">
+      <path id="Panel_Left" data-name="Panel Left" d="M9 6 L16.5 6 L16.5 40 L7 40 C5.895 40 5 39.105 5 38 L5 10 C5 7.791 6.791 6 9 6 Z" fill="#111111"/>
+      <path id="Panel_Middle" data-name="Panel Middle" d="M18 9 L30 9 L30 43 L18 43 Z" fill="#111111"/>
+      <path id="Panel_Right" data-name="Panel Right" d="M31.5 6 L39 6 C41.209 6 43 7.791 43 10 L43 38 C43 39.105 42.105 40 41 40 L31.5 40 Z" fill="#111111"/>
+      <path id="Pin_Head" data-name="Pin Head" d="M20 19 C20 16.791 21.791 15 24 15 C26.209 15 28 16.791 28 19 C28 21.209 26.209 23 24 23 C21.791 23 20 21.209 20 19 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

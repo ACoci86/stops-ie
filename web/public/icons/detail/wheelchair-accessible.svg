@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>wheelchair-accessible</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="wheelchair-accessible" data-vc-layer="sublayer">
+      <path id="Head" d="M18.5 8 C18.5 5.515 20.515 3.5 23 3.5 C25.485 3.5 27.5 5.515 27.5 8 C27.5 10.485 25.485 12.5 23 12.5 C20.515 12.5 18.5 10.485 18.5 8 Z" fill="#009e73"/>
+      <path id="Back___Seat" data-name="Back + Seat" d="M20 14.5 L26 14.5 L26 26 L34 26 L34 32 L20 32 Z" fill="#111111"/>
+      <path id="Leg" d="M36 26 L42 26 L42 42 C42 43.105 41.105 44 40 44 L36 44 Z" fill="#111111"/>
+      <path id="Wheel" d="M29.392 37 C26.677 41.704 21.14 43.997 15.894 42.591 C10.648 41.185 7 36.431 7 31 C7 25.569 10.648 20.815 15.894 19.409 L17.188 24.239 C14.128 25.059 12 27.832 12 31 C12 34.168 14.128 36.941 17.188 37.761 C20.249 38.581 23.478 37.244 25.062 34.5 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

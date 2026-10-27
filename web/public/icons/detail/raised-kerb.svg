@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>raised-kerb</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="raised-kerb" data-vc-layer="sublayer">
+      <path id="Kerb___Footpath" data-name="Kerb + Footpath" d="M4 18 L23 18 C24.657 18 26 19.343 26 21 L26 44 L4 44 Z" fill="#111111"/>
+      <path id="Road" d="M28 36 L44 36 L44 44 L28 44 Z" fill="#111111"/>
+      <path id="Bus_Floor_Level" data-name="Bus Floor Level" d="M28 18 L41 18 C42.657 18 44 19.343 44 21 L44 21 C44 22.657 42.657 24 41 24 L28 24 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

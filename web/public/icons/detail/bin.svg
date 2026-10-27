@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>bin</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="bin" data-vc-layer="sublayer">
+      <path id="Handle" d="M19.5 3 L28.5 3 C29.328 3 30 3.672 30 4.5 L30 6 L18 6 L18 4.5 C18 3.672 18.672 3 19.5 3 Z" fill="#009e73"/>
+      <path id="Lid" d="M9.5 8 L38.5 8 C39.881 8 41 9.119 41 10.5 L41 13 L7 13 L7 10.5 C7 9.119 8.119 8 9.5 8 Z" fill="#111111"/>
+      <path id="Stave_1" data-name="Stave 1" d="M10 15 L18.333 15 L19.333 44 L19.333 44 L15 44 L13 42 Z" fill="#111111"/>
+      <path id="Stave_2" data-name="Stave 2" d="M20.333 15 L27.667 15 L26.667 44 L26.667 44 L21.333 44 L21.333 44 Z" fill="#111111"/>
+      <path id="Stave_3" data-name="Stave 3" d="M29.667 15 L38 15 L35 42 L33 44 L28.667 44 L28.667 44 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

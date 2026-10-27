@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>setting-rural</title>
+  <g id="Stop_Details" data-name="Stop Details">
+    <g id="setting-rural" data-vc-layer="sublayer">
+      <path id="Canopy" d="M12 16 C12 9.373 17.373 4 24 4 C30.627 4 36 9.373 36 16 C36 22.627 30.627 28 24 28 C17.373 28 12 22.627 12 16 Z" fill="#009e73"/>
+      <path id="Trunk" d="M21 30 L27 30 L27 38 L21 38 Z" fill="#111111"/>
+      <path id="Ground" d="M6 40 L42 40 C43.105 40 44 40.895 44 42 L44 42 C44 43.105 43.105 44 42 44 L6 44 C4.895 44 4 43.105 4 42 L4 42 C4 40.895 4.895 40 6 40 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

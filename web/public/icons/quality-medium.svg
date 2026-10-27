@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>quality-medium</title>
+  <g id="Quality_Badges" data-name="Quality Badges">
+    <g id="quality-medium" data-vc-layer="sublayer">
+      <path id="Bar_1" data-name="Bar 1" d="M7 27 L13 27 C14.657 27 16 28.343 16 30 L16 41 L7 41 Z" fill="#111111"/>
+      <path id="Bar_2" data-name="Bar 2" d="M19.5 17 L25.5 17 C27.157 17 28.5 18.343 28.5 20 L28.5 41 L19.5 41 Z" fill="#111111"/>
+      <path id="Bar_3" data-name="Bar 3" d="M32 7 L38 7 C39.657 7 41 8.343 41 10 L41 41 L32 41 Z" fill="#d4d4d4"/>
+    </g>
+  </g>
+</svg>

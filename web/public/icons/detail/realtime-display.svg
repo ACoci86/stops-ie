@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>realtime-display</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="realtime-display" data-vc-layer="sublayer">
+      <path id="Screen_Top" data-name="Screen Top" d="M8 6 L40 6 C42.209 6 44 7.791 44 10 L44 12 L4 12 L4 10 C4 7.791 5.791 6 8 6 Z" fill="#111111"/>
+      <path id="Screen_Left" data-name="Screen Left" d="M4 14 L10 14 L10 24 L4 24 Z" fill="#111111"/>
+      <path id="Screen_Right" data-name="Screen Right" d="M38 14 L44 14 L44 24 L38 24 Z" fill="#111111"/>
+      <path id="Screen_Bottom" data-name="Screen Bottom" d="M4 26 L44 26 L44 28 C44 30.209 42.209 32 40 32 L8 32 C5.791 32 4 30.209 4 28 Z" fill="#111111"/>
+      <path id="Next_Bus_Line" data-name="Next Bus Line" d="M13 15.5 L27.5 15.5 C28.328 15.5 29 16.172 29 17 L29 17 C29 17.828 28.328 18.5 27.5 18.5 L13 18.5 Z" fill="#009e73"/>
+      <path id="Following_Bus_Line" data-name="Following Bus Line" d="M13 20.5 L33.5 20.5 C34.328 20.5 35 21.172 35 22 L35 22 C35 22.828 34.328 23.5 33.5 23.5 L13 23.5 Z" fill="#111111"/>
+      <path id="Post" d="M21 34 L27 34 L27 44 L21 44 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

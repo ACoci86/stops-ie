@@ -1,13 +1,18 @@
-/* Brand colours, taken from the logo. Use var(--ink) etc. anywhere below. */
+/* ------------------------------------------------------------------ */
+/* Brand colours, taken from the logo. Use var(--ink) etc. below.      */
+/* ------------------------------------------------------------------ */
 :root {
   --ink: #111111;
   --green: #009e73;
+  --green-dark: #00795a;
   --red: #d1242f;
   --grey: #9a9a9a;
-  --line: #e5e5e5;
+  --line: #e5e7eb;
+  --muted: #555555;
+  --bg: #f3f4f6;
+  --sidebar-w: 380px;
 }
 
-/* Reset. Make the page fill the window with no default margins. */
 *,
 *::before,
 *::after {
@@ -19,72 +24,700 @@ body,
 #root {
   margin: 0;
   height: 100%;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
   color: var(--ink);
   background: #ffffff;
 }
 
-/* The app is a column: header on top, map fills the rest. */
-.app {
-  display: flex;
-  flex-direction: column;
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout: sidebar on the left, map fills the rest.                   */
+/* ------------------------------------------------------------------ */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
   height: 100%;
 }
 
-.header {
+.sidebar {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--line);
+  flex-direction: column;
+  min-height: 0;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  z-index: 2;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 28px;
-  width: auto;
-  display: block;
-}
-
-.header p {
-  margin: 0;
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* Popup text */
-.maplibregl-popup-content {
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-/* Wrapper so an error message can sit on top of the map */
-.map-wrap {
-  position: relative;
+.sidebar-body {
   flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+.sidebar-foot {
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--green-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.map-area {
+  position: relative;
   min-height: 0;
 }
 
-/* MapLibre's stylesheet sets position on this div, so we size it with
-   width/height instead of absolute positioning. */
 .map {
   width: 100%;
   height: 100%;
 }
 
-.map-error {
+/* ------------------------------------------------------------------ */
+/* Brand block and search                                             */
+/* ------------------------------------------------------------------ */
+.brand {
+  padding: 1.1rem 1.25rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.brand img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.brand-tag {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.search {
+  position: relative;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.search input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0.85rem 1.25rem 0.85rem 2.9rem;
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search input:focus {
+  box-shadow: inset 0 -2px 0 var(--green);
+}
+
+.search-icon {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  padding: 0.75rem 1rem;
-  background: #fff3f3;
-  border: 1px solid #d1242f;
-  color: #8a0f18;
+  left: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 5;
+}
+
+.search-results button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results button:hover {
+  background: var(--bg);
+}
+
+.result-name {
+  font-weight: 600;
+}
+
+.result-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Intro                                                              */
+/* ------------------------------------------------------------------ */
+.intro-lead {
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding-left: 2.1rem;
+  margin-bottom: 1.1rem;
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.steps p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  vertical-align: -1px;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.dot-yes { background: var(--green); }
+.dot-no { background: var(--red); }
+.dot-unknown { background: var(--grey); }
+
+/* ------------------------------------------------------------------ */
+/* Stop panel                                                         */
+/* ------------------------------------------------------------------ */
+.icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  color: var(--green-dark);
+  cursor: pointer;
   font-size: 0.9rem;
-  z-index: 10;
+}
+
+.back .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.panel-ga {
+  margin: 0.1rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.panel-place {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg);
+  border-radius: 6px;
+  font-size: 0.88rem;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  padding: 0 0.4rem;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.rating-none {
+  color: var(--muted);
+}
+
+.facilities {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.facility {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.facility-label {
+  flex: 1;
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem 0.1rem 0.35rem;
+  border-radius: 999px;
+}
+
+.mark .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.mark-unknown {
+  padding-left: 0.5rem;
+}
+
+.mark-good { background: #e3f6ef; color: var(--green-dark); }
+.mark-bad { background: #fde8ea; color: #9b1c25; }
+.mark-unknown { background: var(--bg); color: var(--muted); font-weight: 600; }
+
+.panel-h3 {
+  margin: 1.25rem 0 0.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.panel-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.routes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.route {
+  padding: 0.1rem 0.5rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.panel-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1.25rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+
+.panel-meta dt {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
+.panel-meta .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.panel-meta dd {
+  margin: 0;
+}
+
+.directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------ */
+/* Map overlays                                                       */
+/* ------------------------------------------------------------------ */
+.map-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.pill {
+  background: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.pill:hover {
+  background: var(--bg);
+}
+
+.maplibregl-ctrl-geolocate .maplibregl-ctrl-icon {
+  background-image: url("/icons/marker-user-location.svg");
+  background-size: 22px 22px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Modal                                                              */
+/* ------------------------------------------------------------------ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 20;
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  font-size: 0.92rem;
+}
+
+.modal h2 {
+  margin: 0 0 0.75rem;
+}
+
+.modal ul {
+  padding-left: 1.2rem;
+}
+
+.modal a {
+  color: var(--green-dark);
+}
+
+.modal-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Phones: stack it. Logo, search, map, then the text.                */
+/* ------------------------------------------------------------------ */
+@media (max-width: 760px) {
+  html,
+  body,
+  #root {
+    height: auto;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* display: contents makes the sidebar's children lay out as if they
+     were direct children of .layout, so we can reorder them. */
+  .sidebar {
+    display: contents;
+  }
+
+  .brand { order: 1; }
+  .search { order: 2; }
+  .map-area { order: 3; height: 55vh; }
+  .sidebar-body { order: 4; overflow: visible; }
+  .sidebar-foot { order: 5; }
+
+  .map-buttons {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Keyboard focus. One clear ring everywhere.                         */
+/* ------------------------------------------------------------------ */
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+
+.panel-title:focus {
+  outline: none; /* programmatic focus on the heading: no ring needed */
+}
+
+/* ------------------------------------------------------------------ */
+/* Filters                                                            */
+/* ------------------------------------------------------------------ */
+.filters {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.filters legend {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.3rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filter input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--green);
+}
+
+.filter-count {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.search-results button.active {
+  background: var(--bg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Counties                                                           */
+/* ------------------------------------------------------------------ */
+.county-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-top: 0.75rem;
+}
+
+.county-table th,
+.county-table td {
+  padding: 0.35rem 0.25rem;
+  text-align: left;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.county-table thead th {
+  border-top: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.county-table th[scope="row"] {
+  font-weight: 600;
+}
+
+.county-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.county-table .link {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.county-table .link:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.8rem;
+  margin: 0.4rem 0 0;
+}
+
+.busy-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.busy-list li {
+  padding: 0.15rem 0;
+}
+
+.busy-stop {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  text-align: left;
+  color: var(--green-dark);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.busy-stop:hover span {
+  text-decoration: underline;
+}
+
+.busy-stop strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+.panel-actions .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.panel-actions .icon {
+  width: 16px;
+  height: 16px;
 }

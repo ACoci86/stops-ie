@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>marker-stop</title>
+  <g id="Map_Markers" data-name="Map Markers">
+    <g id="marker-stop" data-vc-layer="sublayer">
+      <path id="Marker_Body" data-name="Marker Body" d="M12 2 L28 2 C35.732 2 42 8.268 42 16 L42 32 C42 35.314 39.314 38 36 38 L12 38 C8.686 38 6 35.314 6 32 L6 8 C6 4.686 8.686 2 12 2 Z" fill="#111111"/>
+      <path id="Marker_Tip" data-name="Marker Tip" d="M17 39.5 L31 39.5 L24 46.5 Z" fill="#111111"/>
+      <path id="Pin_Head" data-name="Pin Head" d="M18 16 C18 12.686 20.686 10 24 10 C27.314 10 30 12.686 30 16 C30 19.314 27.314 22 24 22 C20.686 22 18 19.314 18 16 Z" fill="#009e73"/>
+      <path id="Pin_Stem" data-name="Pin Stem" d="M22.75 23.5 L25.25 23.5 L25.25 29.5 L22.75 29.5 Z" fill="#ffffff"/>
+      <path id="Ground_Bar" data-name="Ground Bar" d="M13 29.5 L35 29.5 L35 32 L13 32 Z" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

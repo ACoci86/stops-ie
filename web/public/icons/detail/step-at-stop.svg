@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>step-at-stop</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="step-at-stop" data-vc-layer="sublayer">
+      <path id="Ground_Slab" data-name="Ground Slab" d="M4 36 L44 36 L44 44 L4 44 Z" fill="#111111"/>
+      <path id="Step_1" data-name="Step 1" d="M18 26 L44 26 L44 34 L16 34 L16 28 C16 26.895 16.895 26 18 26 Z" fill="#111111"/>
+      <path id="Step_2" data-name="Step 2" d="M30 16 L41 16 C42.657 16 44 17.343 44 19 L44 24 L28 24 L28 18 C28 16.895 28.895 16 30 16 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

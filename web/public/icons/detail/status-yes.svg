@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>status-yes</title>
+  <g id="Status___Navigation" data-name="Status &amp; Navigation">
+    <g id="status-yes" data-vc-layer="sublayer">
+      <path id="Short_Leg" data-name="Short Leg" d="M3.879 27.121 L14.879 38.121 L19.121 33.879 L8.121 22.879 Z" fill="#009e73"/>
+      <path id="Long_Leg" data-name="Long Leg" d="M25.352 38.862 L44.352 14.862 L39.648 11.138 L20.648 35.138 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>
