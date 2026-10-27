@@ -1,7 +1,7 @@
 // The detail view for one stop. Replaces the intro in the sidebar.
 
 import { useEffect, useRef, useState } from "react";
-import { REPORT_EMAIL } from "./config";
+import { CONTACT_EMAIL } from "./config";
 import type { NearbyStop } from "./filterStops";
 import type { SelectedStop, StopProperties, YesNoUnknown } from "./types";
 
@@ -80,7 +80,7 @@ export default function StopPanel({ stop, nearby, onPick, onBack }: Props) {
 
   const shareUrl = `${window.location.origin}${window.location.pathname}#stop=${p.id}`;
   const reportHref =
-    `mailto:${REPORT_EMAIL}?subject=${encodeURIComponent(`STOPS: problem with stop ${p.id}`)}` +
+    `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`STOPS: problem with stop ${p.id}`)}` +
     `&body=${encodeURIComponent(
       `Stop: ${p.name ?? ""} (${p.id})\nLink: ${shareUrl}\n\nWhat is wrong or out of date?\n\n`,
     )}`;

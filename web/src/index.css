@@ -73,13 +73,6 @@ button {
   padding: 1rem 1.25rem 1.5rem;
 }
 
-.sidebar-foot {
-  padding: 0.6rem 1.25rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
 .link {
   background: none;
   border: 0;
@@ -517,6 +510,14 @@ button {
   margin: 0 0 0.75rem;
 }
 
+.modal h3 {
+  margin: 1.1rem 0 0.3rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
 .modal ul {
   padding-left: 1.2rem;
 }
@@ -709,12 +710,6 @@ button {
 
   .sheet-peek .sheet-body {
     display: none;
-  }
-
-  .sheet .sidebar-foot {
-    padding: 0.75rem 0 0;
-    border-top: 1px solid var(--line);
-    margin-top: 1rem;
   }
 
   /* Bigger touch targets */

@@ -153,20 +153,6 @@ export default function App() {
     );
   }
 
-  const builtOn = meta
-    ? new Date(meta.built).toLocaleDateString("en-IE", { day: "numeric", month: "short", year: "numeric" })
-    : null;
-
-  const foot = (
-    <footer className="sidebar-foot">
-      Data: National Transport Authority, CC BY 4.0.
-      {builtOn && ` Updated ${builtOn}.`}{" "}
-      <button className="link" onClick={() => setShowSources(true)}>
-        Sources
-      </button>
-    </footer>
-  );
-
   return (
     <div className="layout">
       <header className="topbar">
@@ -191,12 +177,10 @@ export default function App() {
       {isMobile ? (
         <Sheet state={sheet} onChange={setSheet} summary={summary}>
           {body}
-          {foot}
         </Sheet>
       ) : (
         <aside className="sidebar">
           <div className="sidebar-body">{body}</div>
-          {foot}
         </aside>
       )}
 
@@ -220,7 +204,7 @@ export default function App() {
             Counties
           </button>
           <button className="pill" onClick={() => setShowSources(true)}>
-            Data sources
+            About
           </button>
         </div>
       </main>
