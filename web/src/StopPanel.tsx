@@ -1,6 +1,6 @@
 // The detail view for one stop. Replaces the intro in the sidebar.
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { REPORT_EMAIL } from "./config";
 import type { SelectedStop, StopProperties, YesNoUnknown } from "./types";
 
@@ -52,6 +52,17 @@ interface Props {
 export default function StopPanel({ stop, onBack }: Props) {
   const p = stop.props;
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const [copied, setCopied] = useState(false);
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.prompt("Copy this link", shareUrl);
+    }
+  }
 
   // Put keyboard focus on the title when a stop opens, so screen-reader
   // users land on the new content instead of staying on the map.
@@ -144,12 +155,8 @@ export default function StopPanel({ stop, onBack }: Props) {
       </a>
 
       <div className="panel-actions">
-        <button
-          className="link"
-          onClick={() => navigator.clipboard?.writeText(shareUrl)}
-          title="Copy a link that opens this stop"
-        >
-          Copy link to this stop
+        <button className="link" onClick={copyLink} title="Copy a link that opens this stop">
+          <Icon name="copy-link" /> {copied ? "Link copied" : "Copy link to this stop"}
         </button>
         <a className="link" href={reportHref}>
           <img src="/icons/icon-report.svg" alt="" className="icon" /> Report a problem

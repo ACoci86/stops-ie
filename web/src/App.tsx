@@ -6,6 +6,8 @@ import SearchBox from "./SearchBox";
 import Intro from "./Intro";
 import Counties from "./Counties";
 import DataSources from "./DataSources";
+import Sheet, { type SheetState } from "./Sheet";
+import { useIsMobile } from "./useIsMobile";
 import { BUSY_THRESHOLD } from "./config";
 import { NO_FILTERS, type CountyStats, type Filters, type SelectedStop, type StopProperties } from "./types";
 
@@ -28,6 +30,8 @@ export default function App() {
   const [county, setCounty] = useState<string | null>(null);
   const [fitBounds, setFitBounds] = useState<[number, number, number, number] | null>(null);
   const [showSources, setShowSources] = useState(false);
+  const isMobile = useIsMobile();
+  const [sheet, setSheet] = useState<SheetState>("half");
 
   // Load the data once. The map gets it as a prop, so one download serves both.
   useEffect(() => {
@@ -67,6 +71,7 @@ export default function App() {
 
   function select(stop: SelectedStop | null) {
     setSelected(stop);
+    if (stop) setSheet("half");
     const hash = stop ? `#stop=${stop.props.id}` : "";
     if (window.location.hash !== hash) {
       // replaceState changes the URL without adding a browser-history entry
@@ -80,11 +85,10 @@ export default function App() {
     const features = stops.filter((f) => {
       const p = f.properties;
       if (county && p.county !== county) return false;
-      if (filters.noShelter && p.shelter !== "no") return false;
-      if (filters.noSeating && p.bench !== "no") return false;
-      if (filters.noRtpi && p.rtpi !== "no") return false;
-      if (filters.notAccessible && p.wheelchair !== "no") return false;
-      if (filters.notSurveyed && p.surveyed) return false;
+      if (filters.shelter && p.shelter !== "yes") return false;
+      if (filters.seating && p.bench !== "yes") return false;
+      if (filters.rtpi && p.rtpi !== "yes") return false;
+      if (filters.wheelchair && p.wheelchair !== "yes") return false;
       if (filters.busy && (p.departures_weekday ?? 0) < BUSY_THRESHOLD) return false;
       return true;
     });
@@ -96,12 +100,11 @@ export default function App() {
     if (c) setFitBounds(c.bbox);
   }
 
-  // On a phone the panel is below the map. Scroll it into view when a stop is picked.
-  useEffect(() => {
-    if (selected && window.innerWidth <= 760) {
-      document.querySelector(".sidebar-body")?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [selected]);
+  let summary = `${stops.length.toLocaleString("en-IE")} bus stops`;
+  if (selected) summary = selected.props.name ?? selected.props.id;
+  else if (view === "counties") summary = county ?? "Counties";
+  else if (visible.features.length !== stops.length)
+    summary = `${visible.features.length.toLocaleString("en-IE")} stops match your filters`;
 
   let body;
   if (selected) {
@@ -132,44 +135,63 @@ export default function App() {
     );
   }
 
+  const foot = (
+    <footer className="sidebar-foot">
+      Data: National Transport Authority, CC BY 4.0.{" "}
+      <button className="link" onClick={() => setShowSources(true)}>
+        Sources
+      </button>
+    </footer>
+  );
+
   return (
     <div className="layout">
-      <aside className="sidebar">
-        <div className="brand">
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              select(null);
-              setView("intro");
-              setCounty(null);
-            }}
-          >
-            <img src="/logo-header.svg" alt="STOPS, home" />
-          </a>
-          <span className="brand-tag">Ireland's bus stops and what they have</span>
-        </div>
-
+      <header className="topbar">
+        <a
+          href="/"
+          className="brand-link"
+          onClick={(e) => {
+            e.preventDefault();
+            select(null);
+            setView("intro");
+            setCounty(null);
+            setSheet("half");
+          }}
+        >
+          <img src="/logo-header.svg" alt="STOPS, home" className="brand-logo" />
+          <img src="/favicon.svg" alt="STOPS, home" className="brand-mark" />
+        </a>
+        <span className="brand-tag">Ireland's bus stops and what they have</span>
         <SearchBox stops={stops} onPick={select} />
+      </header>
 
-        <div className="sidebar-body">{body}</div>
-
-        <footer className="sidebar-foot">
-          Data: National Transport Authority, CC BY 4.0.{" "}
-          <button className="link" onClick={() => setShowSources(true)}>
-            Sources
-          </button>
-        </footer>
-      </aside>
+      {isMobile ? (
+        <Sheet state={sheet} onChange={setSheet} summary={summary}>
+          {body}
+          {foot}
+        </Sheet>
+      ) : (
+        <aside className="sidebar">
+          <div className="sidebar-body">{body}</div>
+          {foot}
+        </aside>
+      )}
 
       <main className="map-area">
-        <StopsMap stops={visible} selected={selected} onSelect={select} fitBounds={fitBounds} />
+        <StopsMap
+          stops={visible}
+          selected={selected}
+          onSelect={select}
+          fitBounds={fitBounds}
+          bottomPadding={isMobile && sheet !== "peek" ? Math.round(window.innerHeight * 0.5) : 0}
+        />
         <div className="map-buttons">
           <button
             className="pill"
             onClick={() => {
               select(null);
               setView("counties");
+              setSheet("half");
             }}
           >
             Counties

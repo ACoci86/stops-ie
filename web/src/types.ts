@@ -63,21 +63,19 @@ export interface CountyStats {
   busy_no_shelter: { id: string; name: string | null; departures: number; lng: number; lat: number }[];
 }
 
-// Which filters are switched on. All true conditions must hold.
+// Which filters are switched on. A stop must have every selected thing.
 export interface Filters {
-  noShelter: boolean;
-  noSeating: boolean;
-  noRtpi: boolean;
-  notAccessible: boolean;
-  notSurveyed: boolean;
+  shelter: boolean;
+  seating: boolean;
+  rtpi: boolean;
+  wheelchair: boolean;
   busy: boolean;
 }
 
 export const NO_FILTERS: Filters = {
-  noShelter: false,
-  noSeating: false,
-  noRtpi: false,
-  notAccessible: false,
-  notSurveyed: false,
+  shelter: false,
+  seating: false,
+  rtpi: false,
+  wheelchair: false,
   busy: false,
 };

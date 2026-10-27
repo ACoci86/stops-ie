@@ -27,9 +27,12 @@ setWorkerUrl(workerUrl);
 // Free vector tiles, no API key. Positron is a light, quiet style.
 const BASEMAP = "https://tiles.openfreemap.org/styles/positron";
 
-// Roughly the centre of Ireland, and a zoom that shows the whole island.
-const IRELAND_CENTER: [number, number] = [-8.0, 53.4];
-const IRELAND_ZOOM = 6.3;
+// The island, west/south to east/north. The map starts fitted to this,
+// which works on any screen size.
+const IRELAND_BOUNDS: [[number, number], [number, number]] = [
+  [-10.7, 51.35],
+  [-5.4, 55.45],
+];
 
 // MapLibre cannot use an SVG file directly. We draw it onto a canvas at
 // double size (for sharp retina screens) and hand MapLibre the pixels.
@@ -67,9 +70,10 @@ interface Props {
   selected: SelectedStop | null;
   onSelect: (stop: SelectedStop) => void;
   fitBounds: [number, number, number, number] | null; // zoom to this area when it changes
+  bottomPadding: number; // pixels covered by the phone bottom sheet
 }
 
-export default function StopsMap({ stops, selected, onSelect, fitBounds }: Props) {
+export default function StopsMap({ stops, selected, onSelect, fitBounds, bottomPadding }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const readyRef = useRef(false); // true once our layers exist
@@ -80,10 +84,12 @@ export default function StopsMap({ stops, selected, onSelect, fitBounds }: Props
   const onSelectRef = useRef(onSelect);
   const selectedRef = useRef(selected);
   const stopsRef = useRef(stops);
+  const paddingRef = useRef(bottomPadding);
   useEffect(() => {
     onSelectRef.current = onSelect;
     selectedRef.current = selected;
     stopsRef.current = stops;
+    paddingRef.current = bottomPadding;
   });
 
   // Create the map once, when the component first appears.
@@ -93,8 +99,16 @@ export default function StopsMap({ stops, selected, onSelect, fitBounds }: Props
     const map = new MapLibreMap({
       container: containerRef.current,
       style: BASEMAP,
-      center: IRELAND_CENTER,
-      zoom: IRELAND_ZOOM,
+      bounds: IRELAND_BOUNDS,
+      // On a phone, leave room for the top bar and the bottom sheet.
+      fitBoundsOptions: {
+        padding: {
+          top: paddingRef.current > 0 ? 80 : 20,
+          bottom: 20 + paddingRef.current,
+          left: 20,
+          right: 20,
+        },
+      },
       attributionControl: { compact: true },
     });
     mapRef.current = map;
@@ -210,10 +224,13 @@ export default function StopsMap({ stops, selected, onSelect, fitBounds }: Props
     (map.getSource("selected") as GeoJSONSource).setData(pinData(selected));
     if (!selected) return;
 
+    // On a phone the bottom sheet covers part of the map, so we pad the
+    // bottom and the stop lands in the visible part.
+    const padding = { top: 0, left: 0, right: 0, bottom: paddingRef.current };
     const target: [number, number] = [selected.lng, selected.lat];
     const inView = map.getBounds().contains(target);
-    if (!inView || map.getZoom() < 13) {
-      map.flyTo({ center: target, zoom: Math.max(map.getZoom(), 15), duration: 1200 });
+    if (!inView || map.getZoom() < 13 || padding.bottom > 0) {
+      map.flyTo({ center: target, zoom: Math.max(map.getZoom(), 15), duration: 1200, padding });
     }
   }, [selected]);
 
@@ -233,7 +250,7 @@ export default function StopsMap({ stops, selected, onSelect, fitBounds }: Props
         [fitBounds[0], fitBounds[1]],
         [fitBounds[2], fitBounds[3]],
       ],
-      { padding: 40, duration: 1000 },
+      { padding: { top: 40, left: 40, right: 40, bottom: 40 + paddingRef.current }, duration: 1000 },
     );
   }, [fitBounds]);
 
