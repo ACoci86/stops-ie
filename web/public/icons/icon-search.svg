@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>icon-search</title>
+  <g id="UI_Icons" data-name="UI Icons">
+    <g id="icon-search" data-vc-layer="sublayer">
+      <path id="Lens_Top" data-name="Lens Top" d="M11 5 L27 5 C30.314 5 33 7.686 33 11 L33 11 L5 11 L5 11 C5 7.686 7.686 5 11 5 Z" fill="#111111"/>
+      <path id="Lens_Left" data-name="Lens Left" d="M5 12.5 L11 12.5 L11 25.5 L5 25.5 Z" fill="#111111"/>
+      <path id="Lens_Right" data-name="Lens Right" d="M27 12.5 L33 12.5 L33 25.5 L27 25.5 Z" fill="#111111"/>
+      <path id="Lens_Bottom" data-name="Lens Bottom" d="M5 27 L33 27 L33 27 C33 30.314 30.314 33 27 33 L11 33 C7.686 33 5 30.314 5 27 Z" fill="#111111"/>
+      <path id="Handle" d="M35.6 31.4 L44.1 39.9 L39.9 44.1 L31.4 35.6 Z" fill="#111111"/>
+      <path id="Focus_Dot" data-name="Focus Dot" d="M15 19 C15 16.791 16.791 15 19 15 C21.209 15 23 16.791 23 19 C23 21.209 21.209 23 19 23 C16.791 23 15 21.209 15 19 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

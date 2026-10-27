@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>icon-bus</title>
+  <g id="UI_Icons" data-name="UI Icons">
+    <g id="icon-bus" data-vc-layer="sublayer">
+      <path id="Bus_Body" data-name="Bus Body" d="M18 4 L30 4 C34.971 4 39 8.029 39 13 L39 36 C39 37.105 38.105 38 37 38 L11 38 C9.895 38 9 37.105 9 36 L9 13 C9 8.029 13.029 4 18 4 Z" fill="#111111"/>
+      <path id="Windscreen" d="M15.5 9 L32.5 9 C33.605 9 34.5 9.895 34.5 11 L34.5 19 C34.5 20.105 33.605 21 32.5 21 L15.5 21 C14.395 21 13.5 20.105 13.5 19 L13.5 11 C13.5 9.895 14.395 9 15.5 9 Z" fill="#ffffff"/>
+      <path id="Headlight_Left" data-name="Headlight Left" d="M13.5 30.5 C13.5 29.119 14.619 28 16 28 C17.381 28 18.5 29.119 18.5 30.5 C18.5 31.881 17.381 33 16 33 C14.619 33 13.5 31.881 13.5 30.5 Z" fill="#ffffff"/>
+      <path id="Headlight_Right" data-name="Headlight Right" d="M29.5 30.5 C29.5 29.119 30.619 28 32 28 C33.381 28 34.5 29.119 34.5 30.5 C34.5 31.881 33.381 33 32 33 C30.619 33 29.5 31.881 29.5 30.5 Z" fill="#ffffff"/>
+      <path id="Wheel_Left" data-name="Wheel Left" d="M11 39.5 L18 39.5 L18 42.5 C18 43.328 17.328 44 16.5 44 L12.5 44 C11.672 44 11 43.328 11 42.5 Z" fill="#111111"/>
+      <path id="Wheel_Right" data-name="Wheel Right" d="M30 39.5 L37 39.5 L37 42.5 C37 43.328 36.328 44 35.5 44 L31.5 44 C30.672 44 30 43.328 30 42.5 Z" fill="#111111"/>
+      <path id="Route_Accent" data-name="Route Accent" d="M13.5 23 L34.5 23 L34.5 25.5 L13.5 25.5 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

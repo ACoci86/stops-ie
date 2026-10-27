@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>source</title>
+  <g id="Stop_Details" data-name="Stop Details">
+    <g id="source" data-vc-layer="sublayer">
+      <path id="Disc_Top" data-name="Disc Top" d="M13 4 L35 4 C37.762 4 40 6.239 40 9 L40 9 C40 11.761 37.762 14 35 14 L13 14 C10.238 14 8 11.761 8 9 L8 9 C8 6.239 10.238 4 13 4 Z" fill="#009e73"/>
+      <path id="Disc_Middle" data-name="Disc Middle" d="M8 16 L40 16 L40 22 C40 25.314 37.314 28 34 28 L14 28 C10.686 28 8 25.314 8 22 Z" fill="#111111"/>
+      <path id="Disc_Bottom" data-name="Disc Bottom" d="M8 30 L40 30 L40 37 C40 40.866 36.866 44 33 44 L15 44 C11.134 44 8 40.866 8 37 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

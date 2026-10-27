@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>setting-urban</title>
+  <g id="Stop_Details" data-name="Stop Details">
+    <g id="setting-urban" data-vc-layer="sublayer">
+      <path id="Tower" d="M5 6 L15 6 C17.209 6 19 7.791 19 10 L19 44 L5 44 Z" fill="#111111"/>
+      <path id="Block" d="M21 18 L31 18 L31 44 L21 44 Z" fill="#111111"/>
+      <path id="House" d="M33 28 L40 28 C41.657 28 43 29.343 43 31 L43 44 L33 44 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

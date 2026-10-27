@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>marker-user-location</title>
+  <g id="Map_Markers" data-name="Map Markers">
+    <g id="marker-user-location" data-vc-layer="sublayer">
+      <path id="Accuracy_Halo" data-name="Accuracy Halo" d="M4 24 C4 12.954 12.954 4 24 4 C35.046 4 44 12.954 44 24 C44 35.046 35.046 44 24 44 C12.954 44 4 35.046 4 24 Z" fill="#009e73" opacity="0.2"/>
+      <path id="Outer_Ring" data-name="Outer Ring" d="M13.5 24 C13.5 18.201 18.201 13.5 24 13.5 C29.799 13.5 34.5 18.201 34.5 24 C34.5 29.799 29.799 34.5 24 34.5 C18.201 34.5 13.5 29.799 13.5 24 Z" fill="#ffffff"/>
+      <path id="Location_Dot" data-name="Location Dot" d="M16.5 24 C16.5 19.858 19.858 16.5 24 16.5 C28.142 16.5 31.5 19.858 31.5 24 C31.5 28.142 28.142 31.5 24 31.5 C19.858 31.5 16.5 28.142 16.5 24 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

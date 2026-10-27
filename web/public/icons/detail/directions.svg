@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>directions</title>
+  <g id="Stop_Details" data-name="Stop Details">
+    <g id="directions" data-vc-layer="sublayer">
+      <path id="Stem" d="M8 20 L14 20 L14 44 L10 44 C8.895 44 8 43.105 8 42 Z" fill="#111111"/>
+      <path id="Route" d="M14 12 L30 12 L30 18 L8 18 L8 18 C8 14.686 10.686 12 14 12 Z" fill="#111111"/>
+      <path id="Arrow_Head" data-name="Arrow Head" d="M32 4 L44 15 L32 26 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>marker-cluster</title>
+  <g id="Map_Markers" data-name="Map Markers">
+    <g id="marker-cluster" data-vc-layer="sublayer">
+      <path id="Count_Area" data-name="Count Area" d="M10 10 L38 10 L38 38 L10 38 Z" fill="#ffffff"/>
+      <path id="Ring_Top" data-name="Ring Top" d="M10 4 L38 4 C41.314 4 44 6.686 44 10 L44 10 L4 10 L4 10 C4 6.686 6.686 4 10 4 Z" fill="#111111"/>
+      <path id="Ring_Left" data-name="Ring Left" d="M4 11.5 L10 11.5 L10 36.5 L4 36.5 Z" fill="#111111"/>
+      <path id="Ring_Right" data-name="Ring Right" d="M38 11.5 L44 11.5 L44 36.5 L38 36.5 Z" fill="#111111"/>
+      <path id="Ring_Bottom" data-name="Ring Bottom" d="M4 38 L44 38 L44 38 C44 41.314 41.314 44 38 44 L10 44 C6.686 44 4 41.314 4 38 Z" fill="#111111"/>
+      <path id="Accent_Module" data-name="Accent Module" d="M38 4 L38 4 C41.314 4 44 6.686 44 10 L44 10 L38 10 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

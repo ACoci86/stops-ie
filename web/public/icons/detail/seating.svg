@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>seating</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="seating" data-vc-layer="sublayer">
+      <path id="Backrest" d="M11 10 L37 10 C38.657 10 40 11.343 40 13 L40 16 L8 16 L8 13 C8 11.343 9.343 10 11 10 Z" fill="#009e73"/>
+      <path id="Seat" d="M8 22 L40 22 C41.657 22 43 23.343 43 25 L43 25 C43 26.657 41.657 28 40 28 L8 28 C6.343 28 5 26.657 5 25 L5 25 C5 23.343 6.343 22 8 22 Z" fill="#111111"/>
+      <path id="Leg_Left" data-name="Leg Left" d="M10 30 L16 30 L16 44 L12 44 C10.895 44 10 43.105 10 42 Z" fill="#111111"/>
+      <path id="Leg_Right" data-name="Leg Right" d="M32 30 L38 30 L38 42 C38 43.105 37.105 44 36 44 L32 44 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

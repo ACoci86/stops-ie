@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>arrow-back</title>
+  <g id="Status___Navigation" data-name="Status &amp; Navigation">
+    <g id="arrow-back" data-vc-layer="sublayer">
+      <path id="Arrow_Head" data-name="Arrow Head" d="M4 24 L16 12 L16 36 Z" fill="#111111"/>
+      <path id="Shaft" d="M18 21 L41 21 C42.657 21 44 22.343 44 24 L44 24 C44 25.657 42.657 27 41 27 L18 27 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

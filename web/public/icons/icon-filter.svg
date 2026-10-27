@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>icon-filter</title>
+  <g id="UI_Icons" data-name="UI Icons">
+    <g id="icon-filter" data-vc-layer="sublayer">
+      <path id="Filter_Bar_1" data-name="Filter Bar 1" d="M5 8 L40 8 C41.657 8 43 9.343 43 11 L43 11 C43 12.657 41.657 14 40 14 L5 14 Z" fill="#111111"/>
+      <path id="Filter_Bar_2" data-name="Filter Bar 2" d="M11 21 L34 21 C35.657 21 37 22.343 37 24 L37 24 C37 25.657 35.657 27 34 27 L11 27 Z" fill="#111111"/>
+      <path id="Filter_Bar_3" data-name="Filter Bar 3" d="M17 34 L28 34 C29.657 34 31 35.343 31 37 L31 37 C31 38.657 29.657 40 28 40 L17 40 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

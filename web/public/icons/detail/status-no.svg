@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>status-no</title>
+  <g id="Status___Navigation" data-name="Status &amp; Navigation">
+    <g id="status-no" data-vc-layer="sublayer">
+      <path id="Stroke_A" data-name="Stroke A" d="M6.879 11.121 L36.879 41.121 L41.121 36.879 L11.121 6.879 Z" fill="#111111"/>
+      <path id="Stroke_B_Upper" data-name="Stroke B Upper" d="M36.879 6.879 L25.414 18.343 L29.657 22.586 L41.121 11.121 Z" fill="#111111"/>
+      <path id="Stroke_B_Lower" data-name="Stroke B Lower" d="M18.343 25.414 L6.879 36.879 L11.121 41.121 L22.586 29.657 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

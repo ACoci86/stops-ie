@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>icon-realtime</title>
+  <g id="UI_Icons" data-name="UI Icons">
+    <g id="icon-realtime" data-vc-layer="sublayer">
+      <path id="Ring_Top" data-name="Ring Top" d="M11 5 L37 5 C40.314 5 43 7.686 43 11 L43 11 L5 11 L5 11 C5 7.686 7.686 5 11 5 Z" fill="#111111"/>
+      <path id="Ring_Left" data-name="Ring Left" d="M5 12.5 L11 12.5 L11 35.5 L5 35.5 Z" fill="#111111"/>
+      <path id="Ring_Right" data-name="Ring Right" d="M37 12.5 L43 12.5 L43 35.5 L37 35.5 Z" fill="#111111"/>
+      <path id="Ring_Bottom" data-name="Ring Bottom" d="M5 37 L43 37 L43 37 C43 40.314 40.314 43 37 43 L11 43 C7.686 43 5 40.314 5 37 Z" fill="#111111"/>
+      <path id="Hour_Hand" data-name="Hour Hand" d="M21.75 12.505 L26.25 12.505 L26.25 25.5 L21.75 25.5 Z" fill="#111111"/>
+      <path id="Minute_Hand" data-name="Minute Hand" d="M27.659 21 L35.659 21 L35.659 25.5 L27.659 25.5 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

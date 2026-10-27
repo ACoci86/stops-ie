@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>icon-stop</title>
+  <g id="UI_Icons" data-name="UI Icons">
+    <g id="icon-stop" data-vc-layer="sublayer">
+      <path id="Top_Left_Corner" data-name="Top Left Corner" d="M8 4 L12 4 L12 11 L5 11 L5 7 C5 5.343 6.343 4 8 4 Z" fill="#111111"/>
+      <path id="Top_Bar" data-name="Top Bar" d="M13.5 4 L33.5 4 L33.5 11 L13.5 11 Z" fill="#111111"/>
+      <path id="Top_Right_Corner" data-name="Top Right Corner" d="M35 4 L37 4 C40.314 4 43 6.686 43 10 L43 11 L35 11 Z" fill="#111111"/>
+      <path id="Left_Column" data-name="Left Column" d="M5 12.5 L12 12.5 L12 25 L5 25 Z" fill="#111111"/>
+      <path id="Right_Column_Upper" data-name="Right Column Upper" d="M35 12.5 L43 12.5 L43 25 L35 25 Z" fill="#111111"/>
+      <path id="Right_Column_Lower" data-name="Right Column Lower" d="M35 26.5 L43 26.5 L43 37.5 L35 37.5 Z" fill="#111111"/>
+      <path id="Bottom_Bar" data-name="Bottom Bar" d="M5 39 L33.5 39 L33.5 44 L5 44 Z" fill="#111111"/>
+      <path id="Bottom_Right_Corner" data-name="Bottom Right Corner" d="M35 39 L43 39 L43 44 L35 44 Z" fill="#111111"/>
+      <path id="Pin_Stem" data-name="Pin Stem" d="M22.8 29.5 L25.2 29.5 L25.2 39 L22.8 39 Z" fill="#111111"/>
+      <path id="Pin_Head" data-name="Pin Head" d="M17.5 23 C17.5 19.41 20.41 16.5 24 16.5 C27.59 16.5 30.5 19.41 30.5 23 C30.5 26.59 27.59 29.5 24 29.5 C20.41 29.5 17.5 26.59 17.5 23 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>

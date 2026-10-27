@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>stop-number</title>
+  <g id="Stop_Details" data-name="Stop Details">
+    <g id="stop-number" data-vc-layer="sublayer">
+      <path id="Upright_Left" data-name="Upright Left" d="M16 6 L20 6 L20 42 L14 42 L14 8 C14 6.895 14.895 6 16 6 Z" fill="#111111"/>
+      <path id="Upright_Right" data-name="Upright Right" d="M28 6 L34 6 L34 40 C34 41.105 33.105 42 32 42 L28 42 Z" fill="#111111"/>
+      <path id="Upper_Bar_Left" data-name="Upper Bar Left" d="M6 14 L12 14 L12 20 L6 20 Z" fill="#111111"/>
+      <path id="Upper_Bar_Middle" data-name="Upper Bar Middle" d="M22 14 L26 14 L26 20 L22 20 Z" fill="#009e73"/>
+      <path id="Upper_Bar_Right" data-name="Upper Bar Right" d="M36 14 L40 14 C41.105 14 42 14.895 42 16 L42 20 L36 20 Z" fill="#111111"/>
+      <path id="Lower_Bar_Left" data-name="Lower Bar Left" d="M6 28 L12 28 L12 34 L8 34 C6.895 34 6 33.105 6 32 Z" fill="#111111"/>
+      <path id="Lower_Bar_Middle" data-name="Lower Bar Middle" d="M22 28 L26 28 L26 34 L22 34 Z" fill="#009e73"/>
+      <path id="Lower_Bar_Right" data-name="Lower Bar Right" d="M36 28 L42 28 L42 34 L36 34 Z" fill="#111111"/>
+    </g>
+  </g>
+</svg>

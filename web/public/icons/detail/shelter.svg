@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <title>shelter</title>
+  <g id="Stop_Amenities" data-name="Stop Amenities">
+    <g id="shelter" data-vc-layer="sublayer">
+      <path id="Roof" d="M8 5 L40 5 C41.657 5 43 6.343 43 8 L43 11 L5 11 L5 8 C5 6.343 6.343 5 8 5 Z" fill="#111111"/>
+      <path id="Pole" d="M6 13 L12 13 L12 44 L6 44 Z" fill="#111111"/>
+      <path id="Bench_Seat" data-name="Bench Seat" d="M17 29 L41 29 C42.105 29 43 29.895 43 31 L43 34 L17 34 Z" fill="#111111"/>
+      <path id="Bench_Leg_Left" data-name="Bench Leg Left" d="M19 36 L23 36 L23 44 L19 44 Z" fill="#111111"/>
+      <path id="Bench_Leg_Right" data-name="Bench Leg Right" d="M37 36 L41 36 L41 44 L37 44 Z" fill="#111111"/>
+      <path id="Passenger_Head" data-name="Passenger Head" d="M22.5 20 C22.5 17.515 24.515 15.5 27 15.5 C29.485 15.5 31.5 17.515 31.5 20 C31.5 22.485 29.485 24.5 27 24.5 C24.515 24.5 22.5 22.485 22.5 20 Z" fill="#009e73"/>
+    </g>
+  </g>
+</svg>
