@@ -1,12 +1,22 @@
 // A small modal listing where the data comes from.
 
 import { useEffect, useRef } from "react";
+import type { Meta } from "./types";
 
 interface Props {
+  meta: Meta | null;
   onClose: () => void;
 }
 
-export default function DataSources({ onClose }: Props) {
+function day(iso: string | null | undefined) {
+  if (!iso) return null;
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? null : d.toLocaleDateString("en-IE", { day: "numeric", month: "short", year: "numeric" });
+}
+
+export default function DataSources({ meta, onClose }: Props) {
+  const src = meta?.sources ?? {};
+  const published = (file: string) => day(src[file]?.last_modified) ?? day(src[file]?.fetched);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   // Move keyboard focus into the modal, close on Escape, and put focus back
@@ -39,26 +49,32 @@ export default function DataSources({ onClose }: Props) {
           <li>
             <a href="https://data.gov.ie/dataset/national-public-transport-access-nodes-naptan" target="_blank" rel="noreferrer">NaPTAN</a>
             : stop names, numbers and locations.
+            {published("naptan_stop_points.csv") && <span className="muted"> Published {published("naptan_stop_points.csv")}.</span>}
           </li>
           <li>
             <a href="https://data.gov.ie/dataset/public-transport-infrastructure-management-system-ptims" target="_blank" rel="noreferrer">PTIMS</a>
             : shelters, seating, kerbs, accessibility and the NTA's A to C rating.
+            {published("ptims.zip") && <span className="muted"> Published {published("ptims.zip")}.</span>}
           </li>
           <li>
             <a href="https://data.gov.ie/dataset/nta-gtfs" target="_blank" rel="noreferrer">GTFS</a>
-            : routes and departure counts.
-          </li>
-          <li>
-            Combined by{" "}
-            <a href="https://projects.bibby.ie/naptimfs/" target="_blank" rel="noreferrer">NaPTIMFS</a>
-            , an independent project by Thomas Bibby.
+            : routes and departures, counted over one reference week.
+            {published("gtfs_all.zip") && <span className="muted"> Published {published("gtfs_all.zip")}.</span>}
           </li>
         </ul>
         <p>
-          Base map by{" "}
+          County, electoral area and urban area come from{" "}
+          <a href="https://data.gov.ie/organization/tailte-eireann" target="_blank" rel="noreferrer">Tailte Éireann</a>{" "}
+          and CSO boundaries, CC BY 4.0. Base map by{" "}
           <a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a>{" "}
           from OpenStreetMap data.
         </p>
+        {meta && (
+          <p>
+            This site's data was built on <strong>{day(meta.built)}</strong> from those files, by an
+            open pipeline you can read on GitHub. It refreshes every week.
+          </p>
+        )}
         <p className="modal-note">
           A record says what the NTA has on file. It is not a guarantee of what is on
           the ground today. Stops marked "unknown" have not been surveyed.

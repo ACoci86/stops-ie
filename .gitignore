@@ -20,5 +20,5 @@ docs/STOPS_conversation.md
 .vscode/
 .DS_Store
 
-# Processed data (regenerate with scripts/clean_stops.py)
+# Processed data (regenerate with scripts/build_stops.py)
 data/processed/

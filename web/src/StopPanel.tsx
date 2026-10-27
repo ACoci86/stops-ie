@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { REPORT_EMAIL } from "./config";
+import type { NearbyStop } from "./filterStops";
 import type { SelectedStop, StopProperties, YesNoUnknown } from "./types";
 
 interface Facility {
@@ -46,10 +47,17 @@ function formatDate(iso: string | null) {
 
 interface Props {
   stop: SelectedStop;
+  nearby: NearbyStop[];
+  onPick: (s: SelectedStop) => void;
   onBack: () => void;
 }
 
-export default function StopPanel({ stop, onBack }: Props) {
+// Tiny yes/no/unknown dot for the nearby list.
+function MiniMark({ value, title }: { value: YesNoUnknown; title: string }) {
+  return <i className={`mini mini-${value}`} title={`${title}: ${value}`} aria-label={`${title}: ${value}`} />;
+}
+
+export default function StopPanel({ stop, nearby, onPick, onBack }: Props) {
   const p = stop.props;
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [copied, setCopied] = useState(false);
@@ -131,6 +139,35 @@ export default function StopPanel({ stop, onBack }: Props) {
             </span>
           ))}
         </div>
+      )}
+
+      {nearby.length > 0 && (
+        <>
+          <h3 className="panel-h3">Nearby stops</h3>
+          <ul className="nearby">
+            {nearby.map(({ feature, metres }) => {
+              const q = feature.properties;
+              const [lng, lat] = feature.geometry.coordinates;
+              return (
+                <li key={q.id}>
+                  <button className="nearby-stop" onClick={() => onPick({ props: q, lng, lat })}>
+                    <span className="nearby-name">
+                      {q.name ?? q.id}
+                      <small>{q.id}</small>
+                    </span>
+                    <span className="nearby-marks">
+                      <MiniMark value={q.shelter} title="Shelter" />
+                      <MiniMark value={q.bench} title="Seating" />
+                      <MiniMark value={q.rtpi} title="Real-time display" />
+                    </span>
+                    <span className="nearby-dist">{metres} m</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="muted small">Dots: shelter, seating, real-time display.</p>
+        </>
       )}
 
       <dl className="panel-meta">

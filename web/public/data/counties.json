@@ -18,11 +18,11 @@
     "lat": 52.83703
    },
    {
-    "id": "8210B202101",
-    "name": "Wexford Road Business Park",
+    "id": "8210CO11146",
+    "name": "Ashgrove",
     "departures": 74,
-    "lng": -6.89713,
-    "lat": 52.82061
+    "lng": -6.91241,
+    "lat": 52.83064
    },
    {
     "id": "8210CO11147",
@@ -32,18 +32,18 @@
     "lat": 52.83307
    },
    {
-    "id": "8210CO11106",
-    "name": "MSD Carlow",
-    "departures": 74,
-    "lng": -6.88462,
-    "lat": 52.85425
+    "id": "8210B5981201",
+    "name": "SETU Carlow",
+    "departures": 44,
+    "lng": -6.93612,
+    "lat": 52.83005
    },
    {
-    "id": "8210CO11146",
-    "name": "Ashgrove",
-    "departures": 74,
-    "lng": -6.91241,
-    "lat": 52.83064
+    "id": "8210CO11099",
+    "name": "Green Lane",
+    "departures": 44,
+    "lng": -6.91761,
+    "lat": 52.84124
    }
   ],
   "shelter": {
@@ -77,23 +77,16 @@
    {
     "id": "8520B1358601",
     "name": "Cavan Bus Station",
-    "departures": 97,
+    "departures": 60,
     "lng": -7.36358,
     "lat": 53.99036
    },
    {
     "id": "8520B141451",
     "name": "Cavan Bus Station",
-    "departures": 73,
+    "departures": 60,
     "lng": -7.36329,
     "lat": 53.99022
-   },
-   {
-    "id": "8520LL10635",
-    "name": "Cavan Hospital",
-    "departures": 51,
-    "lng": -7.37284,
-    "lat": 54.00178
    },
    {
     "id": "8520B141471",
@@ -108,6 +101,13 @@
     "departures": 36,
     "lng": -7.32685,
     "lat": 53.98467
+   },
+   {
+    "id": "8520B1015501",
+    "name": "Training Campus",
+    "departures": 35,
+    "lng": -7.32695,
+    "lat": 53.98457
    }
   ],
   "shelter": {
@@ -129,8 +129,8 @@
  },
  {
   "county": "Clare",
-  "stops": 540,
-  "surveyed": 476,
+  "stops": 538,
+  "surveyed": 474,
   "bbox": [
    -9.93012,
    52.56088,
@@ -144,13 +144,6 @@
     "departures": 121,
     "lng": -8.9729,
     "lat": 52.84968
-   },
-   {
-    "id": "8360B3553301",
-    "name": "Shannon Airport",
-    "departures": 109,
-    "lng": -8.92189,
-    "lat": 52.69234
    },
    {
     "id": "8360B600311",
@@ -172,54 +165,54 @@
     "departures": 95,
     "lng": -8.9783,
     "lat": 52.85089
+   },
+   {
+    "id": "8360B337701",
+    "name": "John and Paul Church",
+    "departures": 87,
+    "lng": -8.86647,
+    "lat": 52.70946
    }
   ],
   "shelter": {
-   "yes": 40,
+   "yes": 38,
    "no": 436
   },
   "bench": {
-   "yes": 57,
+   "yes": 55,
    "no": 419
   },
   "rtpi": {
    "yes": 2,
-   "no": 474
+   "no": 472
   },
   "wheelchair": {
-   "yes": 246,
+   "yes": 244,
    "no": 230
   }
  },
  {
   "county": "Cork",
-  "stops": 868,
-  "surveyed": 736,
+  "stops": 867,
+  "surveyed": 737,
   "bbox": [
    -10.15497,
    51.45159,
    -7.84302,
-   52.3544
+   52.35975
   ],
   "busy_no_shelter": [
    {
     "id": "8380B245791",
     "name": "IDA Ovens",
-    "departures": 184,
+    "departures": 171,
     "lng": -8.63865,
     "lat": 51.87687
    },
    {
-    "id": "8380B246671",
-    "name": "Ovens",
-    "departures": 157,
-    "lng": -8.64692,
-    "lat": 51.87668
-   },
-   {
     "id": "8380B245341",
     "name": "Carrigaline",
-    "departures": 113,
+    "departures": 111,
     "lng": -8.39251,
     "lat": 51.8132
    },
@@ -236,29 +229,36 @@
     "departures": 110,
     "lng": -8.39229,
     "lat": 51.82085
+   },
+   {
+    "id": "8380B245021",
+    "name": "Cork Road",
+    "departures": 110,
+    "lng": -8.39145,
+    "lat": 51.81819
    }
   ],
   "shelter": {
    "yes": 111,
-   "no": 625
+   "no": 626
   },
   "bench": {
    "yes": 109,
-   "no": 627
+   "no": 628
   },
   "rtpi": {
    "yes": 1,
-   "no": 735
+   "no": 736
   },
   "wheelchair": {
    "yes": 364,
-   "no": 372
+   "no": 373
   }
  },
  {
   "county": "Cork City",
-  "stops": 916,
-  "surveyed": 766,
+  "stops": 917,
+  "surveyed": 767,
   "bbox": [
    -8.63367,
    51.84732,
@@ -276,23 +276,9 @@
    {
     "id": "8370B2409201",
     "name": "George's Quay",
-    "departures": 367,
+    "departures": 349,
     "lng": -8.47071,
     "lat": 51.895
-   },
-   {
-    "id": "8370B2550201",
-    "name": "Cork Bus Station",
-    "departures": 300,
-    "lng": -8.46653,
-    "lat": 51.8996
-   },
-   {
-    "id": "8370B2401301",
-    "name": "Mardyke Walk",
-    "departures": 271,
-    "lng": -8.48828,
-    "lat": 51.89664
    },
    {
     "id": "8370B216581",
@@ -300,29 +286,43 @@
     "departures": 270,
     "lng": -8.46692,
     "lat": 51.90143
+   },
+   {
+    "id": "8370B2401301",
+    "name": "Mardyke Walk",
+    "departures": 254,
+    "lng": -8.48828,
+    "lat": 51.89664
+   },
+   {
+    "id": "8370B2405701",
+    "name": "Victoria Cross",
+    "departures": 205,
+    "lng": -8.50582,
+    "lat": 51.89229
    }
   ],
   "shelter": {
    "yes": 249,
-   "no": 517
+   "no": 518
   },
   "bench": {
    "yes": 229,
-   "no": 537
+   "no": 538
   },
   "rtpi": {
    "yes": 54,
-   "no": 712
+   "no": 713
   },
   "wheelchair": {
-   "yes": 673,
+   "yes": 674,
    "no": 93
   }
  },
  {
   "county": "Donegal",
-  "stops": 483,
-  "surveyed": 346,
+  "stops": 474,
+  "surveyed": 339,
   "bbox": [
    -8.77032,
    54.47613,
@@ -331,56 +331,56 @@
   ],
   "busy_no_shelter": [
    {
-    "id": "8530B1558201",
-    "name": "Donegal",
-    "departures": 89,
-    "lng": -8.11077,
-    "lat": 54.65386
-   },
-   {
     "id": "8530LL10831",
     "name": "Letterkenny Bus Station",
-    "departures": 86,
+    "departures": 56,
     "lng": -7.72864,
     "lat": 54.95414
    },
    {
+    "id": "8530B1558201",
+    "name": "Donegal",
+    "departures": 53,
+    "lng": -8.11077,
+    "lat": 54.65386
+   },
+   {
+    "id": "8530B1559601",
+    "name": "ATU Letterkenny",
+    "departures": 45,
+    "lng": -7.72142,
+    "lat": 54.95085
+   },
+   {
     "id": "8530B1558401",
     "name": "Letterkenny Bus Station",
-    "departures": 65,
+    "departures": 41,
     "lng": -7.72844,
     "lat": 54.95372
    },
    {
-    "id": "8530PB15264",
-    "name": "Glenveagh Visitor Centre",
-    "departures": 60,
-    "lng": -7.93813,
-    "lat": 55.05636
-   },
-   {
-    "id": "8530PB15265",
-    "name": "Glenveagh Castle",
-    "departures": 60,
-    "lng": -7.96841,
-    "lat": 55.03658
+    "id": "8530B140811",
+    "name": "Ballyshannon",
+    "departures": 39,
+    "lng": -8.18971,
+    "lat": 54.50094
    }
   ],
   "shelter": {
    "yes": 13,
-   "no": 333
+   "no": 326
   },
   "bench": {
-   "yes": 49,
-   "no": 297
+   "yes": 46,
+   "no": 293
   },
   "rtpi": {
    "yes": 0,
-   "no": 346
+   "no": 339
   },
   "wheelchair": {
-   "yes": 61,
-   "no": 285
+   "yes": 60,
+   "no": 279
   }
  },
  {
@@ -397,16 +397,9 @@
    {
     "id": "8220DB000747",
     "name": "Kildare Street",
-    "departures": 880,
+    "departures": 878,
     "lng": -6.25572,
     "lat": 53.33993
-   },
-   {
-    "id": "8220DB000786",
-    "name": "Leeson Street Lower",
-    "departures": 717,
-    "lng": -6.25612,
-    "lat": 53.33513
    },
    {
     "id": "8220DB000515",
@@ -416,31 +409,38 @@
     "lat": 53.35439
    },
    {
+    "id": "8220DB000786",
+    "name": "Leeson Street Lower",
+    "departures": 704,
+    "lng": -6.25612,
+    "lat": 53.33513
+   },
+   {
     "id": "8220DB000522",
     "name": "Fairview",
-    "departures": 701,
+    "departures": 700,
     "lng": -6.2356,
     "lat": 53.36321
    },
    {
-    "id": "8220DB007883",
-    "name": "Ormond Quay Upper",
-    "departures": 646,
-    "lng": -6.2685,
-    "lat": 53.34606
+    "id": "8220DB000400",
+    "name": "Shaw Street",
+    "departures": 631,
+    "lng": -6.25339,
+    "lat": 53.34485
    }
   ],
   "shelter": {
-   "yes": 560,
-   "no": 1385
+   "yes": 561,
+   "no": 1384
   },
   "bench": {
-   "yes": 480,
-   "no": 1465
+   "yes": 481,
+   "no": 1464
   },
   "rtpi": {
-   "yes": 430,
-   "no": 1515
+   "yes": 429,
+   "no": 1516
   },
   "wheelchair": {
    "yes": 1696,
@@ -448,23 +448,16 @@
   }
  },
  {
-  "county": "Dun Laoghaire/Rathdown",
-  "stops": 828,
-  "surveyed": 782,
+  "county": "Dún Laoghaire-Rathdown",
+  "stops": 829,
+  "surveyed": 784,
   "bbox": [
-   -6.29537,
+   -6.27989,
    53.20937,
    -6.10689,
    53.31231
   ],
   "busy_no_shelter": [
-   {
-    "id": "8250DB002039",
-    "name": "Dun Laoghaire Stn",
-    "departures": 603,
-    "lng": -6.1349,
-    "lat": 53.29489
-   },
    {
     "id": "8250DB002035",
     "name": "Crofton Road",
@@ -480,41 +473,48 @@
     "lat": 53.29579
    },
    {
-    "id": "8250DB000461",
-    "name": "Stillorgan Pk Hotel",
-    "departures": 374,
-    "lng": -6.20354,
-    "lat": 53.2948
-   },
-   {
     "id": "8250DB002041",
     "name": "St Michael's Hosp",
     "departures": 365,
     "lng": -6.13923,
     "lat": 53.2936
+   },
+   {
+    "id": "8250DB000461",
+    "name": "Stillorgan Pk Hotel",
+    "departures": 329,
+    "lng": -6.20354,
+    "lat": 53.2948
+   },
+   {
+    "id": "8250DB002039",
+    "name": "Dun Laoghaire Stn",
+    "departures": 310,
+    "lng": -6.1349,
+    "lat": 53.29489
    }
   ],
   "shelter": {
-   "yes": 266,
-   "no": 516
+   "yes": 265,
+   "no": 519
   },
   "bench": {
-   "yes": 263,
-   "no": 519
+   "yes": 262,
+   "no": 522
   },
   "rtpi": {
    "yes": 63,
-   "no": 719
+   "no": 721
   },
   "wheelchair": {
-   "yes": 702,
-   "no": 80
+   "yes": 701,
+   "no": 83
   }
  },
  {
   "county": "Fingal",
-  "stops": 1111,
-  "surveyed": 1023,
+  "stops": 1109,
+  "surveyed": 1021,
   "bbox": [
    -6.45652,
    53.36077,
@@ -525,7 +525,7 @@
    {
     "id": "8240DB003669",
     "name": "Aircraft Hangars",
-    "departures": 392,
+    "departures": 373,
     "lng": -6.23508,
     "lat": 53.42847
    },
@@ -537,13 +537,6 @@
     "lat": 53.41964
    },
    {
-    "id": "8240B111911",
-    "name": "Dublin Airport Terminal 2 Zone 19",
-    "departures": 349,
-    "lng": -6.2384,
-    "lat": 53.42611
-   },
-   {
     "id": "8240DB001630",
     "name": "ALSAA Sports Club",
     "departures": 342,
@@ -551,34 +544,41 @@
     "lat": 53.42187
    },
    {
-    "id": "8240DB003665",
-    "name": "Dublin Airport Terminal 1 Zone 2",
-    "departures": 342,
-    "lng": -6.24411,
-    "lat": 53.42813
+    "id": "8240DB001628",
+    "name": "Collinstown Business Park",
+    "departures": 299,
+    "lng": -6.23908,
+    "lat": 53.41371
+   },
+   {
+    "id": "8240DB006366",
+    "name": "Century Business Park",
+    "departures": 289,
+    "lng": -6.30135,
+    "lat": 53.40265
    }
   ],
   "shelter": {
-   "yes": 178,
-   "no": 845
+   "yes": 177,
+   "no": 844
   },
   "bench": {
-   "yes": 187,
-   "no": 836
+   "yes": 186,
+   "no": 835
   },
   "rtpi": {
-   "yes": 66,
-   "no": 957
+   "yes": 67,
+   "no": 954
   },
   "wheelchair": {
-   "yes": 765,
-   "no": 258
+   "yes": 764,
+   "no": 257
   }
  },
  {
   "county": "Galway",
-  "stops": 574,
-  "surveyed": 463,
+  "stops": 575,
+  "surveyed": 464,
   "bbox": [
    -10.11227,
    53.01454,
@@ -601,13 +601,6 @@
     "lat": 53.30319
    },
    {
-    "id": "8460B0555491",
-    "name": "Celestica",
-    "departures": 95,
-    "lng": -8.99537,
-    "lat": 53.30255
-   },
-   {
     "id": "8460B555461",
     "name": "Medtronic",
     "departures": 95,
@@ -615,48 +608,48 @@
     "lat": 53.30108
    },
    {
-    "id": "847000052",
-    "name": "Bishop Street",
-    "departures": 45,
-    "lng": -8.84788,
-    "lat": 53.51479
+    "id": "8470B5260101",
+    "name": "Oranmore Centre",
+    "departures": 35,
+    "lng": -8.92981,
+    "lat": 53.26656
+   },
+   {
+    "id": "8470CL11524",
+    "name": "Tuam Holy Cross College",
+    "departures": 32,
+    "lng": -8.85041,
+    "lat": 53.51706
    }
   ],
   "shelter": {
    "yes": 32,
-   "no": 431
+   "no": 432
   },
   "bench": {
    "yes": 54,
-   "no": 409
+   "no": 410
   },
   "rtpi": {
    "yes": 0,
-   "no": 463
+   "no": 464
   },
   "wheelchair": {
    "yes": 139,
-   "no": 324
+   "no": 325
   }
  },
  {
   "county": "Galway City",
-  "stops": 441,
-  "surveyed": 344,
+  "stops": 440,
+  "surveyed": 343,
   "bbox": [
    -9.12936,
    53.25749,
    -8.97414,
-   53.3133
+   53.30219
   ],
   "busy_no_shelter": [
-   {
-    "id": "8460B5225901",
-    "name": "Saint Francis Street",
-    "departures": 221,
-    "lng": -9.05329,
-    "lat": 53.27504
-   },
    {
     "id": "8460B5230201",
     "name": "Saint Francis Street",
@@ -665,47 +658,54 @@
     "lat": 53.27531
    },
    {
-    "id": "8460B5230301",
-    "name": "University South",
-    "departures": 211,
-    "lng": -9.06118,
-    "lat": 53.27639
+    "id": "8460B5225901",
+    "name": "Saint Francis Street",
+    "departures": 212,
+    "lng": -9.05329,
+    "lat": 53.27504
    },
    {
     "id": "8460B5232101",
     "name": "Bóthar Bhreandán Uí Eithir",
-    "departures": 203,
+    "departures": 195,
     "lng": -9.04664,
     "lat": 53.27627
    },
    {
-    "id": "8460B5236901",
+    "id": "8460B5230301",
+    "name": "University South",
+    "departures": 190,
+    "lng": -9.06118,
+    "lat": 53.27639
+   },
+   {
+    "id": "8460B5232301",
     "name": "College Road",
-    "departures": 191,
-    "lng": -9.04155,
-    "lat": 53.2764
+    "departures": 187,
+    "lng": -9.04139,
+    "lat": 53.27667
    }
   ],
   "shelter": {
    "yes": 140,
-   "no": 204
+   "no": 203
   },
   "bench": {
    "yes": 131,
-   "no": 213
+   "no": 212
   },
   "rtpi": {
    "yes": 24,
-   "no": 320
+   "no": 319
   },
   "wheelchair": {
    "yes": 315,
-   "no": 29
+   "no": 28
   }
  },
  {
   "county": "Kerry",
-  "stops": 321,
+  "stops": 320,
   "surveyed": 259,
   "bbox": [
    -10.46157,
@@ -717,23 +717,9 @@
    {
     "id": "8390B6350701",
     "name": "University Hospital Kerry",
-    "departures": 51,
+    "departures": 43,
     "lng": -9.68422,
     "lat": 52.26754
-   },
-   {
-    "id": "8390B2556101",
-    "name": "Kenmare",
-    "departures": 39,
-    "lng": -9.58124,
-    "lat": 51.87918
-   },
-   {
-    "id": "8390B3577001",
-    "name": "Farranfore",
-    "departures": 38,
-    "lng": -9.55062,
-    "lat": 52.17249
    },
    {
     "id": "8390B3357401",
@@ -743,9 +729,23 @@
     "lat": 52.06774
    },
    {
+    "id": "8390B335761",
+    "name": "Farranfore",
+    "departures": 37,
+    "lng": -9.55069,
+    "lat": 52.17233
+   },
+   {
+    "id": "8390B3577001",
+    "name": "Farranfore",
+    "departures": 30,
+    "lng": -9.55062,
+    "lat": 52.17249
+   },
+   {
     "id": "8390B6343201",
     "name": "MTU Kerry South",
-    "departures": 37,
+    "departures": 29,
     "lng": -9.68642,
     "lat": 52.27157
    }
@@ -779,16 +779,9 @@
   ],
   "busy_no_shelter": [
    {
-    "id": "8260DB003918",
-    "name": "Old Greenfield",
-    "departures": 168,
-    "lng": -6.58742,
-    "lat": 53.37645
-   },
-   {
     "id": "8260DB003958",
     "name": "Leixlip Main St",
-    "departures": 146,
+    "departures": 139,
     "lng": -6.49081,
     "lat": 53.3636
    },
@@ -800,18 +793,25 @@
     "lat": 53.36364
    },
    {
+    "id": "8260DB003918",
+    "name": "Old Greenfield",
+    "departures": 129,
+    "lng": -6.58742,
+    "lat": 53.37645
+   },
+   {
+    "id": "8260DB003922",
+    "name": "Crodaun Forest Park",
+    "departures": 127,
+    "lng": -6.54685,
+    "lat": 53.35538
+   },
+   {
     "id": "8260DB003923",
     "name": "Thornhill",
     "departures": 127,
     "lng": -6.54656,
     "lat": 53.35208
-   },
-   {
-    "id": "8260DB003910",
-    "name": "Thornhill",
-    "departures": 127,
-    "lng": -6.54688,
-    "lat": 53.35226
    }
   ],
   "shelter": {
@@ -850,11 +850,11 @@
     "lat": 52.65342
    },
    {
-    "id": "8270CD10291",
-    "name": "Parliament Street",
+    "id": "8270CD10323",
+    "name": "Dean Street",
     "departures": 72,
-    "lng": -7.25483,
-    "lat": 52.65485
+    "lng": -7.25768,
+    "lat": 52.65532
    },
    {
     "id": "8270CD10287",
@@ -864,18 +864,18 @@
     "lat": 52.65362
    },
    {
-    "id": "8270CD10323",
-    "name": "Dean Street",
+    "id": "8270CD10291",
+    "name": "Parliament Street",
     "departures": 72,
-    "lng": -7.25768,
-    "lat": 52.65532
+    "lng": -7.25483,
+    "lat": 52.65485
    },
    {
-    "id": "8270CD10290",
-    "name": "Parliament Street",
+    "id": "8270CD10324",
+    "name": "Dean Street",
     "departures": 71,
-    "lng": -7.25507,
-    "lat": 52.655
+    "lng": -7.2585,
+    "lat": 52.65485
    }
   ],
   "shelter": {
@@ -909,23 +909,16 @@
    {
     "id": "828000017",
     "name": "Market Square",
-    "departures": 106,
+    "departures": 93,
     "lng": -7.30266,
     "lat": 53.03438
    },
    {
     "id": "828000016",
     "name": "Market Square",
-    "departures": 90,
+    "departures": 84,
     "lng": -7.30294,
     "lat": 53.03446
-   },
-   {
-    "id": "8280B160121",
-    "name": "Kellyville Park",
-    "departures": 86,
-    "lng": -7.3003,
-    "lat": 53.03263
    },
    {
     "id": "8280B160141",
@@ -935,9 +928,16 @@
     "lat": 53.03607
    },
    {
+    "id": "8280B160121",
+    "name": "Kellyville Park",
+    "departures": 78,
+    "lng": -7.3003,
+    "lat": 53.03263
+   },
+   {
     "id": "8280B160321",
     "name": "Portlaoise Station",
-    "departures": 83,
+    "departures": 78,
     "lng": -7.30427,
     "lat": 53.03602
    }
@@ -973,23 +973,9 @@
    {
     "id": "8480B6310401",
     "name": "Manorhamilton",
-    "departures": 21,
+    "departures": 15,
     "lng": -8.17633,
     "lat": 54.30517
-   },
-   {
-    "id": "8480B5590101",
-    "name": "Ballinamore",
-    "departures": 18,
-    "lng": -7.80253,
-    "lat": 54.05231
-   },
-   {
-    "id": "8480B559351",
-    "name": "Ballinamore",
-    "departures": 18,
-    "lng": -7.80208,
-    "lat": 54.05247
    },
    {
     "id": "8480B5561701",
@@ -999,11 +985,25 @@
     "lat": 53.90132
    },
    {
-    "id": "848000026",
+    "id": "8480B556311",
+    "name": "Aghamore",
+    "departures": 13,
+    "lng": -7.95616,
+    "lat": 53.9013
+   },
+   {
+    "id": "8480B5590101",
+    "name": "Ballinamore",
+    "departures": 12,
+    "lng": -7.80253,
+    "lat": 54.05231
+   },
+   {
+    "id": "848000003",
     "name": "Drumshanbo Business Park",
-    "departures": 14,
-    "lng": -8.0416,
-    "lat": 54.04613
+    "departures": 12,
+    "lng": -8.04115,
+    "lat": 54.04623
    }
   ],
   "shelter": {
@@ -1025,8 +1025,8 @@
  },
  {
   "county": "Limerick",
-  "stops": 322,
-  "surveyed": 293,
+  "stops": 560,
+  "surveyed": 514,
   "bbox": [
    -9.30663,
    52.33966,
@@ -1035,75 +1035,18 @@
   ],
   "busy_no_shelter": [
    {
+    "id": "8400B6071101",
+    "name": "William Street",
+    "departures": 224,
+    "lng": -8.62544,
+    "lat": 52.6634
+   },
+   {
     "id": "8400B6076101",
     "name": "Plassey Village",
     "departures": 172,
     "lng": -8.57495,
     "lat": 52.66898
-   },
-   {
-    "id": "8410B609091",
-    "name": "The Forts",
-    "departures": 66,
-    "lng": -8.64493,
-    "lat": 52.6269
-   },
-   {
-    "id": "8410B609101",
-    "name": "Rathmore",
-    "departures": 66,
-    "lng": -8.64533,
-    "lat": 52.62573
-   },
-   {
-    "id": "8400B607961",
-    "name": "Mulcair Road",
-    "departures": 66,
-    "lng": -8.64845,
-    "lat": 52.63148
-   },
-   {
-    "id": "8410B607921",
-    "name": "Ballycummin Road",
-    "departures": 66,
-    "lng": -8.65241,
-    "lat": 52.62468
-   }
-  ],
-  "shelter": {
-   "yes": 98,
-   "no": 195
-  },
-  "bench": {
-   "yes": 97,
-   "no": 196
-  },
-  "rtpi": {
-   "yes": 8,
-   "no": 285
-  },
-  "wheelchair": {
-   "yes": 183,
-   "no": 110
-  }
- },
- {
-  "county": "Limerick City",
-  "stops": 239,
-  "surveyed": 222,
-  "bbox": [
-   -8.6757,
-   52.644,
-   -8.5909,
-   52.68403
-  ],
-  "busy_no_shelter": [
-   {
-    "id": "8400B6071101",
-    "name": "William Street",
-    "departures": 269,
-    "lng": -8.62544,
-    "lat": 52.6634
    },
    {
     "id": "8400B6073201",
@@ -1120,13 +1063,6 @@
     "lat": 52.65897
    },
    {
-    "id": "8400B0635011",
-    "name": "Limerick Colbert Station",
-    "departures": 155,
-    "lng": -8.62409,
-    "lat": 52.65932
-   },
-   {
     "id": "8400B6083201",
     "name": "Upper Gerald Griffin Street",
     "departures": 148,
@@ -1135,20 +1071,20 @@
    }
   ],
   "shelter": {
-   "yes": 48,
-   "no": 174
+   "yes": 146,
+   "no": 368
   },
   "bench": {
-   "yes": 44,
-   "no": 178
+   "yes": 141,
+   "no": 373
   },
   "rtpi": {
-   "yes": 10,
-   "no": 212
+   "yes": 18,
+   "no": 496
   },
   "wheelchair": {
-   "yes": 196,
-   "no": 26
+   "yes": 379,
+   "no": 135
   }
  },
  {
@@ -1165,14 +1101,14 @@
    {
     "id": "8290B1357701",
     "name": "Longford Station",
-    "departures": 75,
+    "departures": 63,
     "lng": -7.79602,
     "lat": 53.72439
    },
    {
     "id": "829000012",
     "name": "Ballymahon Street",
-    "departures": 27,
+    "departures": 26,
     "lng": -7.80005,
     "lat": 53.72671
    },
@@ -1191,11 +1127,11 @@
     "lat": 53.7246
    },
    {
-    "id": "8290B141591",
-    "name": "Saint Joseph's Care Centre",
+    "id": "8290B104421",
+    "name": "Edgeworthstown",
     "departures": 18,
-    "lng": -7.78785,
-    "lat": 53.72504
+    "lng": -7.61101,
+    "lat": 53.69671
    }
   ],
   "shelter": {
@@ -1229,14 +1165,14 @@
    {
     "id": "8300B1359501",
     "name": "Drogheda Bus Station",
-    "departures": 445,
+    "departures": 250,
     "lng": -6.35339,
     "lat": 53.71172
    },
    {
     "id": "8300B1050901",
     "name": "Dundalk Bus Station",
-    "departures": 377,
+    "departures": 186,
     "lng": -6.40413,
     "lat": 54.00532
    },
@@ -1255,11 +1191,11 @@
     "lat": 53.72328
    },
    {
-    "id": "8300B136831",
-    "name": "George's Street",
-    "departures": 134,
-    "lng": -6.35706,
-    "lat": 53.7165
+    "id": "8300B106501",
+    "name": "Drogheda Hospital",
+    "departures": 124,
+    "lng": -6.3543,
+    "lat": 53.72334
    }
   ],
   "shelter": {
@@ -1293,28 +1229,28 @@
    {
     "id": "8490B151051",
     "name": "Claremorris",
-    "departures": 36,
+    "departures": 35,
     "lng": -8.99793,
     "lat": 53.72144
    },
    {
     "id": "8490B5557101",
     "name": "Westport",
-    "departures": 32,
+    "departures": 23,
     "lng": -9.52062,
     "lat": 53.79865
    },
    {
     "id": "8490B141761",
     "name": "Swinford",
-    "departures": 20,
+    "departures": 19,
     "lng": -8.95011,
     "lat": 53.94375
    },
    {
     "id": "8490B151011",
     "name": "Westport",
-    "departures": 19,
+    "departures": 18,
     "lng": -9.51981,
     "lat": 53.79889
    },
@@ -1383,11 +1319,11 @@
     "lat": 53.5049
    },
    {
-    "id": "8310B133941",
-    "name": "Ninemile Stone",
+    "id": "8310B1012201",
+    "name": "Bourne Avenue",
     "departures": 140,
-    "lng": -6.38539,
-    "lat": 53.49732
+    "lng": -6.39594,
+    "lat": 53.50867
    }
   ],
   "shelter": {
@@ -1421,14 +1357,14 @@
    {
     "id": "8540B1559201",
     "name": "Monaghan Bus Station",
-    "departures": 100,
+    "departures": 77,
     "lng": -6.9691,
     "lat": 54.25222
    },
    {
     "id": "8540B601221",
     "name": "Carrickmacross N2",
-    "departures": 49,
+    "departures": 48,
     "lng": -6.70193,
     "lat": 53.97101
    },
@@ -1449,7 +1385,7 @@
    {
     "id": "8540B152471",
     "name": "Emyvale",
-    "departures": 21,
+    "departures": 19,
     "lng": -6.95944,
     "lat": 54.34045
    }
@@ -1472,70 +1408,6 @@
   }
  },
  {
-  "county": "North Tipperary",
-  "stops": 160,
-  "surveyed": 122,
-  "bbox": [
-   -8.45316,
-   52.61648,
-   -7.71138,
-   53.09237
-  ],
-  "busy_no_shelter": [
-   {
-    "id": "8420B155481",
-    "name": "Nenagh",
-    "departures": 39,
-    "lng": -8.19884,
-    "lat": 52.86428
-   },
-   {
-    "id": "8420PB002885",
-    "name": "Thurles",
-    "departures": 38,
-    "lng": -7.81423,
-    "lat": 52.67911
-   },
-   {
-    "id": "8420B4553001",
-    "name": "Nenagh",
-    "departures": 34,
-    "lng": -8.19808,
-    "lat": 52.8638
-   },
-   {
-    "id": "842000025",
-    "name": "Roscrea Abbey Street",
-    "departures": 28,
-    "lng": -7.79963,
-    "lat": 52.95279
-   },
-   {
-    "id": "8420B155531",
-    "name": "Roscrea Castle Street",
-    "departures": 27,
-    "lng": -7.7975,
-    "lat": 52.95502
-   }
-  ],
-  "shelter": {
-   "yes": 10,
-   "no": 112
-  },
-  "bench": {
-   "yes": 28,
-   "no": 94
-  },
-  "rtpi": {
-   "yes": 0,
-   "no": 122
-  },
-  "wheelchair": {
-   "yes": 51,
-   "no": 71
-  }
- },
- {
   "county": "Offaly",
   "stops": 192,
   "surveyed": 147,
@@ -1547,39 +1419,39 @@
   ],
   "busy_no_shelter": [
    {
-    "id": "8320B1359601",
-    "name": "Edenderry Shopping Centre",
-    "departures": 56,
-    "lng": -7.05857,
-    "lat": 53.34349
-   },
-   {
-    "id": "8320B104531",
-    "name": "Tullamore",
-    "departures": 51,
-    "lng": -7.49164,
-    "lat": 53.27684
-   },
-   {
     "id": "8320B102921",
     "name": "Tullamore",
-    "departures": 45,
+    "departures": 44,
     "lng": -7.49159,
     "lat": 53.27715
    },
    {
-    "id": "832000042",
-    "name": "Tullamore Station",
-    "departures": 35,
-    "lng": -7.49972,
-    "lat": 53.27044
+    "id": "8320B104531",
+    "name": "Tullamore",
+    "departures": 42,
+    "lng": -7.49164,
+    "lat": 53.27684
    },
    {
-    "id": "8320B1521801",
-    "name": "Birr",
+    "id": "8320B1359601",
+    "name": "Edenderry Shopping Centre",
     "departures": 33,
-    "lng": -7.91048,
-    "lat": 53.09609
+    "lng": -7.05857,
+    "lat": 53.34349
+   },
+   {
+    "id": "8320B1521001",
+    "name": "Birr",
+    "departures": 30,
+    "lng": -7.9108,
+    "lat": 53.09611
+   },
+   {
+    "id": "8320B1028001",
+    "name": "Kishawanny Bridge",
+    "departures": 30,
+    "lng": -7.03196,
+    "lat": 53.34697
    }
   ],
   "shelter": {
@@ -1601,8 +1473,8 @@
  },
  {
   "county": "Roscommon",
-  "stops": 183,
-  "surveyed": 138,
+  "stops": 184,
+  "surveyed": 139,
   "bbox": [
    -8.75152,
    53.32877,
@@ -1610,6 +1482,13 @@
    54.08214
   ],
   "busy_no_shelter": [
+   {
+    "id": "8330B5001301",
+    "name": "Orwell Grove",
+    "departures": 57,
+    "lng": -7.97236,
+    "lat": 53.42267
+   },
    {
     "id": "8500B455431",
     "name": "Bellanamullia",
@@ -1625,48 +1504,41 @@
     "lat": 53.42634
    },
    {
-    "id": "8500B455771",
-    "name": "Millcross Road",
-    "departures": 53,
-    "lng": -8.01023,
-    "lat": 53.42604
-   },
-   {
-    "id": "8500B455781",
-    "name": "Bellanamullia",
-    "departures": 53,
-    "lng": -8.0186,
-    "lat": 53.4269
-   },
-   {
     "id": "8500B455451",
     "name": "Monksfield",
     "departures": 53,
     "lng": -8.00355,
     "lat": 53.42545
+   },
+   {
+    "id": "8500B455741",
+    "name": "Danesfort",
+    "departures": 53,
+    "lng": -7.97865,
+    "lat": 53.4197
    }
   ],
   "shelter": {
    "yes": 7,
-   "no": 131
+   "no": 132
   },
   "bench": {
    "yes": 15,
-   "no": 123
+   "no": 124
   },
   "rtpi": {
    "yes": 0,
-   "no": 138
+   "no": 139
   },
   "wheelchair": {
-   "yes": 44,
+   "yes": 45,
    "no": 94
   }
  },
  {
   "county": "Sligo",
-  "stops": 314,
-  "surveyed": 280,
+  "stops": 313,
+  "surveyed": 279,
   "bbox": [
    -9.10254,
    53.99589,
@@ -1682,13 +1554,6 @@
     "lat": 54.27329
    },
    {
-    "id": "8510B5550801",
-    "name": "Sligo Bus Station",
-    "departures": 83,
-    "lng": -8.4825,
-    "lat": 54.27172
-   },
-   {
     "id": "8510B5543101",
     "name": "Sligo Bus Station",
     "departures": 60,
@@ -1696,11 +1561,18 @@
     "lat": 54.27134
    },
    {
-    "id": "8510B554331",
+    "id": "8510B5550801",
     "name": "Sligo Bus Station",
-    "departures": 56,
-    "lng": -8.48228,
-    "lat": 54.27146
+    "departures": 55,
+    "lng": -8.4825,
+    "lat": 54.27172
+   },
+   {
+    "id": "8510B5520701",
+    "name": "Clarion Road",
+    "departures": 53,
+    "lng": -8.45903,
+    "lat": 54.27955
    },
    {
     "id": "8510B5584701",
@@ -1712,29 +1584,29 @@
   ],
   "shelter": {
    "yes": 28,
-   "no": 252
+   "no": 251
   },
   "bench": {
    "yes": 34,
-   "no": 246
+   "no": 245
   },
   "rtpi": {
    "yes": 0,
-   "no": 280
+   "no": 279
   },
   "wheelchair": {
    "yes": 82,
-   "no": 198
+   "no": 197
   }
  },
  {
   "county": "South Dublin",
-  "stops": 1097,
-  "surveyed": 991,
+  "stops": 1100,
+  "surveyed": 993,
   "bbox": [
    -6.50522,
    53.22538,
-   -6.27588,
+   -6.27307,
    53.36213
   ],
   "busy_no_shelter": [
@@ -1775,31 +1647,31 @@
    }
   ],
   "shelter": {
-   "yes": 225,
-   "no": 766
+   "yes": 226,
+   "no": 767
   },
   "bench": {
-   "yes": 189,
-   "no": 802
+   "yes": 190,
+   "no": 803
   },
   "rtpi": {
    "yes": 66,
-   "no": 925
+   "no": 927
   },
   "wheelchair": {
-   "yes": 751,
-   "no": 240
+   "yes": 754,
+   "no": 239
   }
  },
  {
-  "county": "South Tipperary",
-  "stops": 198,
-  "surveyed": 144,
+  "county": "Tipperary",
+  "stops": 358,
+  "surveyed": 266,
   "bbox": [
-   -8.22646,
+   -8.45316,
    52.27002,
    -7.39623,
-   52.69587
+   53.09237
   ],
   "busy_no_shelter": [
    {
@@ -1812,7 +1684,7 @@
    {
     "id": "8430B331911",
     "name": "Clonmel Showgrounds",
-    "departures": 69,
+    "departures": 57,
     "lng": -7.69264,
     "lat": 52.35504
    },
@@ -1826,103 +1698,103 @@
    {
     "id": "8430B331881",
     "name": "Tipperary University Hospital",
-    "departures": 46,
+    "departures": 43,
     "lng": -7.71177,
     "lat": 52.35405
    },
    {
-    "id": "8430LL11452",
-    "name": "Saint Luke's Campus",
+    "id": "8420B155481",
+    "name": "Nenagh",
     "departures": 37,
-    "lng": -7.72048,
-    "lat": 52.35467
+    "lng": -8.19884,
+    "lat": 52.86428
    }
   ],
   "shelter": {
-   "yes": 23,
-   "no": 121
+   "yes": 33,
+   "no": 233
   },
   "bench": {
-   "yes": 36,
-   "no": 108
+   "yes": 64,
+   "no": 202
   },
   "rtpi": {
    "yes": 0,
-   "no": 144
+   "no": 266
   },
   "wheelchair": {
-   "yes": 99,
-   "no": 45
+   "yes": 150,
+   "no": 116
   }
  },
  {
   "county": "Unknown",
-  "stops": 106,
-  "surveyed": 7,
+  "stops": 121,
+  "surveyed": 16,
   "bbox": [
-   -9.07438,
-   51.83866,
+   -9.65104,
+   51.81216,
    -5.71973,
-   55.04571
+   55.13835
   ],
   "busy_no_shelter": [
    {
-    "id": "8380B2322301",
-    "name": "Glenbrook Wharf",
-    "departures": 52,
-    "lng": -8.33206,
-    "lat": 51.8641
-   },
-   {
-    "id": "8240DB000952",
-    "name": "Strand Road",
+    "id": "8240DB000691",
+    "name": "The Moorings",
     "departures": 40,
-    "lng": -6.12182,
-    "lat": 53.39407
+    "lng": -6.10224,
+    "lat": 53.38142
    },
    {
-    "id": "8380B0236151",
-    "name": "Haulbowline Island",
-    "departures": 19,
-    "lng": -8.3019,
-    "lat": 51.83866
+    "id": "8510B558461",
+    "name": "Rosses Point Promenade",
+    "departures": 31,
+    "lng": -8.55721,
+    "lat": 54.30516
    },
    {
-    "id": "8540B156591",
-    "name": "Aughnacloy",
-    "departures": 12,
-    "lng": -6.97724,
-    "lat": 54.41531
+    "id": "853000003",
+    "name": "Cockhill Road",
+    "departures": 22,
+    "lng": -7.45585,
+    "lat": 55.13835
    },
    {
-    "id": "8540B1560101",
-    "name": "Aughnacloy",
-    "departures": 12,
-    "lng": -6.97888,
-    "lat": 54.41635
+    "id": "8530LL10737",
+    "name": "Buncrana",
+    "departures": 22,
+    "lng": -7.45648,
+    "lat": 55.13616
+   },
+   {
+    "id": "853000120",
+    "name": "Buncrana",
+    "departures": 13,
+    "lng": -7.45509,
+    "lat": 55.13327
    }
   ],
   "shelter": {
-   "yes": 0,
-   "no": 7
+   "yes": 2,
+   "no": 14
   },
   "bench": {
-   "yes": 0,
-   "no": 7
+   "yes": 5,
+   "no": 11
   },
   "rtpi": {
    "yes": 0,
-   "no": 7
+   "no": 16
   },
   "wheelchair": {
-   "yes": 5,
-   "no": 2
+   "yes": 6,
+   "no": 10
   }
  },
  {
   "county": "Waterford",
-  "stops": 207,
-  "surveyed": 148,
+  "stops": 505,
+  "surveyed": 312,
   "bbox": [
    -8.05345,
    51.95087,
@@ -1931,73 +1803,9 @@
   ],
   "busy_no_shelter": [
    {
-    "id": "8450B353071",
-    "name": "Crobally Heights",
-    "departures": 110,
-    "lng": -7.1543,
-    "lat": 52.16903
-   },
-   {
-    "id": "8450B331471",
-    "name": "Church Road",
-    "departures": 62,
-    "lng": -7.1561,
-    "lat": 52.15822
-   },
-   {
-    "id": "8450B353081",
-    "name": "Marian Terrace",
-    "departures": 62,
-    "lng": -7.15411,
-    "lat": 52.16761
-   },
-   {
-    "id": "8450B353141",
-    "name": "The Orchard",
-    "departures": 62,
-    "lng": -7.14589,
-    "lat": 52.16559
-   },
-   {
-    "id": "8450B353161",
-    "name": "Ballinattin",
-    "departures": 62,
-    "lng": -7.13785,
-    "lat": 52.17573
-   }
-  ],
-  "shelter": {
-   "yes": 20,
-   "no": 128
-  },
-  "bench": {
-   "yes": 23,
-   "no": 125
-  },
-  "rtpi": {
-   "yes": 3,
-   "no": 145
-  },
-  "wheelchair": {
-   "yes": 46,
-   "no": 102
-  }
- },
- {
-  "county": "Waterford City",
-  "stops": 299,
-  "surveyed": 164,
-  "bbox": [
-   -7.16491,
-   52.21345,
-   -7.0598,
-   52.26802
-  ],
-  "busy_no_shelter": [
-   {
     "id": "8440B352041",
     "name": "The Mall",
-    "departures": 206,
+    "departures": 197,
     "lng": -7.10642,
     "lat": 52.25966
    },
@@ -2011,7 +1819,7 @@
    {
     "id": "8440B3525301",
     "name": "SETU College Street",
-    "departures": 150,
+    "departures": 147,
     "lng": -7.11542,
     "lat": 52.25331
    },
@@ -2031,26 +1839,26 @@
    }
   ],
   "shelter": {
-   "yes": 45,
-   "no": 119
+   "yes": 65,
+   "no": 247
   },
   "bench": {
-   "yes": 29,
-   "no": 135
+   "yes": 52,
+   "no": 260
   },
   "rtpi": {
-   "yes": 7,
-   "no": 157
+   "yes": 10,
+   "no": 302
   },
   "wheelchair": {
-   "yes": 83,
-   "no": 81
+   "yes": 129,
+   "no": 183
   }
  },
  {
   "county": "Westmeath",
-  "stops": 290,
-  "surveyed": 243,
+  "stops": 289,
+  "surveyed": 242,
   "bbox": [
    -7.97248,
    53.34958,
@@ -2061,16 +1869,9 @@
    {
     "id": "8330B1357601",
     "name": "Mullingar Castle Street",
-    "departures": 133,
+    "departures": 119,
     "lng": -7.34004,
     "lat": 53.52651
-   },
-   {
-    "id": "8330B455601",
-    "name": "Kilmartin Centre",
-    "departures": 116,
-    "lng": -7.89383,
-    "lat": 53.41191
    },
    {
     "id": "8330B555391",
@@ -2080,34 +1881,41 @@
     "lat": 53.41526
    },
    {
+    "id": "8330B1357501",
+    "name": "Austin Friars Street",
+    "departures": 88,
+    "lng": -7.33762,
+    "lat": 53.526
+   },
+   {
     "id": "833000006",
     "name": "Regional Hospital",
-    "departures": 94,
+    "departures": 88,
     "lng": -7.34908,
     "lat": 53.53297
    },
    {
-    "id": "8330B455591",
-    "name": "TUS East Campus",
-    "departures": 89,
-    "lng": -7.89991,
-    "lat": 53.41569
+    "id": "8330PB14108",
+    "name": "Mullingar Castle Street",
+    "departures": 87,
+    "lng": -7.33994,
+    "lat": 53.5266
    }
   ],
   "shelter": {
    "yes": 28,
-   "no": 215
+   "no": 214
   },
   "bench": {
    "yes": 28,
-   "no": 215
+   "no": 214
   },
   "rtpi": {
    "yes": 1,
-   "no": 242
+   "no": 241
   },
   "wheelchair": {
-   "yes": 171,
+   "yes": 170,
    "no": 72
   }
  },
@@ -2125,37 +1933,37 @@
    {
     "id": "8340LL10365",
     "name": "Wexford O'Hanrahan Station",
-    "departures": 164,
+    "departures": 131,
     "lng": -6.46447,
     "lat": 52.3427
    },
    {
     "id": "8340B3555201",
     "name": "Enniscorthy",
-    "departures": 118,
+    "departures": 112,
     "lng": -6.56432,
     "lat": 52.50149
    },
    {
-    "id": "8340LL10366",
-    "name": "Wexford O'Hanrahan Station",
-    "departures": 77,
-    "lng": -6.4651,
-    "lat": 52.34319
-   },
-   {
     "id": "8340B3555301",
     "name": "Gorey Main Street",
-    "departures": 56,
+    "departures": 54,
     "lng": -6.29505,
     "lat": 52.67552
    },
    {
     "id": "8340B355121",
     "name": "Gorey Main Street",
-    "departures": 52,
+    "departures": 51,
     "lng": -6.29511,
     "lat": 52.67558
+   },
+   {
+    "id": "8340LL10366",
+    "name": "Wexford O'Hanrahan Station",
+    "departures": 38,
+    "lng": -6.4651,
+    "lat": 52.34319
    }
   ],
   "shelter": {
@@ -2177,8 +1985,8 @@
  },
  {
   "county": "Wicklow",
-  "stops": 523,
-  "surveyed": 471,
+  "stops": 521,
+  "surveyed": 469,
   "bbox": [
    -6.71236,
    52.70967,
@@ -2196,7 +2004,7 @@
    {
     "id": "8350DB004151",
     "name": "Bray Main Street",
-    "departures": 319,
+    "departures": 303,
     "lng": -6.11055,
     "lat": 53.20187
    },
@@ -2224,19 +2032,19 @@
   ],
   "shelter": {
    "yes": 70,
-   "no": 401
+   "no": 399
   },
   "bench": {
    "yes": 92,
-   "no": 379
+   "no": 377
   },
   "rtpi": {
    "yes": 13,
-   "no": 458
+   "no": 456
   },
   "wheelchair": {
    "yes": 254,
-   "no": 217
+   "no": 215
   }
  }
 ]

@@ -1,0 +1,37 @@
+{
+ "built": "2026-10-27T08:50:08+00:00",
+ "stops": 16241,
+ "surveyed": 13770,
+ "sources": {
+  "naptan_stop_points.csv": {
+   "url": "https://www.transportforireland.ie/transitData/Data/NaPTAN_Stop_Points.csv",
+   "fetched": "2026-10-27T08:47:16+00:00",
+   "last_modified": "Thu, 15 Oct 2026 13:28:33 GMT"
+  },
+  "ptims.zip": {
+   "url": "https://www.transportforireland.ie/transitData/Data/ptims.zip",
+   "fetched": "2026-10-27T08:47:36+00:00",
+   "last_modified": "Thu, 15 Oct 2026 14:55:11 GMT"
+  },
+  "gtfs_all.zip": {
+   "url": "https://www.transportforireland.ie/transitData/Data/GTFS_All.zip",
+   "fetched": "2026-10-27T08:47:52+00:00",
+   "last_modified": "Mon, 26 Oct 2026 23:24:28 GMT"
+  },
+  "admin_areas.geojson": {
+   "url": "https://services-eu1.arcgis.com/FH5XCsx8rYXqnjF5/arcgis/rest/services/Administrative_Areas___OSi_National_Statutory_Boundaries___Generalised_20m/FeatureServer/0",
+   "fetched": "2026-10-27T08:47:55+00:00",
+   "last_modified": null
+  },
+  "leas.geojson": {
+   "url": "https://services-eu1.arcgis.com/FH5XCsx8rYXqnjF5/arcgis/rest/services/Local_Electoral_Areas___OSi_National_Statutory_Boundaries___Generalised_20m/FeatureServer/0",
+   "fetched": "2026-10-27T08:47:57+00:00",
+   "last_modified": null
+  },
+  "urban_areas.geojson": {
+   "url": "https://services-eu1.arcgis.com/BuS9rtTsYEV5C0xh/arcgis/rest/services/Urban_Areas_National_Statistical_Boundaries_2022_Generalised_20m/FeatureServer/5",
+   "fetched": "2026-10-27T08:47:57+00:00",
+   "last_modified": null
+  }
+ }
+}

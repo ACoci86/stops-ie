@@ -4,6 +4,7 @@ import Filters from "./Filters";
 import type { Filters as FilterState } from "./types";
 
 interface Props {
+  loading: boolean;
   total: number;
   shown: number;
   filters: FilterState;
@@ -11,9 +12,14 @@ interface Props {
   onCounties: () => void;
 }
 
-export default function Intro({ total, shown, filters, onFilters, onCounties }: Props) {
+export default function Intro({ loading, total, shown, filters, onFilters, onCounties }: Props) {
   return (
     <div className="intro">
+      {loading && (
+        <p className="status" aria-live="polite">
+          <span className="spinner" /> Loading the stops…
+        </p>
+      )}
       <p className="intro-lead">
         STOPS shows what every bus stop in Ireland has, what it lacks, and where
         improvements are needed.

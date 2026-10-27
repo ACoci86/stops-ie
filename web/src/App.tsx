@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { Feature, FeatureCollection, Point } from "geojson";
+import type { FeatureCollection, Point } from "geojson";
 import StopsMap from "./StopsMap";
 import StopPanel from "./StopPanel";
 import SearchBox from "./SearchBox";
@@ -8,10 +8,9 @@ import Counties from "./Counties";
 import DataSources from "./DataSources";
 import Sheet, { type SheetState } from "./Sheet";
 import { useIsMobile } from "./useIsMobile";
-import { BUSY_THRESHOLD } from "./config";
-import { NO_FILTERS, type CountyStats, type Filters, type SelectedStop, type StopProperties } from "./types";
+import { filterStops, nearbyStops, type StopFeature } from "./filterStops";
+import { NO_FILTERS, type CountyStats, type Filters, type Meta, type SelectedStop, type StopProperties } from "./types";
 
-type StopFeature = Feature<Point, StopProperties>;
 type View = "intro" | "counties";
 
 // Read "#stop=8220DB000060" from the address bar.
@@ -23,7 +22,9 @@ function stopIdFromHash(): string | null {
 export default function App() {
   // All the state lives here. Children get it as props.
   const [stops, setStops] = useState<StopFeature[]>([]);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [counties, setCounties] = useState<CountyStats[]>([]);
+  const [meta, setMeta] = useState<Meta | null>(null);
   const [selected, setSelected] = useState<SelectedStop | null>(null);
   const [filters, setFilters] = useState<Filters>(NO_FILTERS);
   const [view, setView] = useState<View>("intro");
@@ -36,13 +37,23 @@ export default function App() {
   // Load the data once. The map gets it as a prop, so one download serves both.
   useEffect(() => {
     fetch("/data/stops.geojson")
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`Server said ${r.status}`);
+        return r.json();
+      })
       .then((fc: FeatureCollection<Point, StopProperties>) => setStops(fc.features))
-      .catch((err) => console.error("Could not load stops", err));
+      .catch((err) => {
+        console.error("Could not load stops", err);
+        setLoadError("The stop data could not be loaded. Check your connection and reload.");
+      });
     fetch("/data/counties.json")
       .then((r) => r.json())
       .then(setCounties)
       .catch((err) => console.error("Could not load counties", err));
+    fetch("/data/meta.json")
+      .then((r) => r.json())
+      .then(setMeta)
+      .catch((err) => console.error("Could not load meta", err));
   }, []);
 
   // Turn a stop number into a SelectedStop, or null if we do not know it.
@@ -81,34 +92,40 @@ export default function App() {
   }
 
   // Apply the filters and the county choice.
-  const visible = useMemo<FeatureCollection<Point, StopProperties>>(() => {
-    const features = stops.filter((f) => {
-      const p = f.properties;
-      if (county && p.county !== county) return false;
-      if (filters.shelter && p.shelter !== "yes") return false;
-      if (filters.seating && p.bench !== "yes") return false;
-      if (filters.rtpi && p.rtpi !== "yes") return false;
-      if (filters.wheelchair && p.wheelchair !== "yes") return false;
-      if (filters.busy && (p.departures_weekday ?? 0) < BUSY_THRESHOLD) return false;
-      return true;
-    });
-    return { type: "FeatureCollection", features };
-  }, [stops, filters, county]);
+  const visible = useMemo<FeatureCollection<Point, StopProperties>>(
+    () => ({ type: "FeatureCollection", features: filterStops(stops, filters, county) }),
+    [stops, filters, county],
+  );
+
+  // Other stops within walking distance of the selected one.
+  const nearby = useMemo(
+    () => (selected ? nearbyStops(stops, selected.lng, selected.lat, selected.props.id) : []),
+    [stops, selected],
+  );
 
   function pickCounty(c: CountyStats | null) {
     setCounty(c ? c.county : null);
     if (c) setFitBounds(c.bbox);
   }
 
-  let summary = `${stops.length.toLocaleString("en-IE")} bus stops`;
-  if (selected) summary = selected.props.name ?? selected.props.id;
+  const loading = stops.length === 0 && !loadError;
+
+  let summary = loading ? "Loading stops…" : `${stops.length.toLocaleString("en-IE")} bus stops`;
+  if (loadError) summary = "Could not load stops";
+  else if (selected) summary = selected.props.name ?? selected.props.id;
   else if (view === "counties") summary = county ?? "Counties";
   else if (visible.features.length !== stops.length)
     summary = `${visible.features.length.toLocaleString("en-IE")} stops match your filters`;
 
   let body;
-  if (selected) {
-    body = <StopPanel stop={selected} onBack={() => select(null)} />;
+  if (loadError) {
+    body = (
+      <p className="status status-error" role="alert">
+        {loadError}
+      </p>
+    );
+  } else if (selected) {
+    body = <StopPanel stop={selected} nearby={nearby} onPick={select} onBack={() => select(null)} />;
   } else if (view === "counties") {
     body = (
       <Counties
@@ -126,6 +143,7 @@ export default function App() {
   } else {
     body = (
       <Intro
+        loading={loading}
         total={stops.length}
         shown={visible.features.length}
         filters={filters}
@@ -135,9 +153,14 @@ export default function App() {
     );
   }
 
+  const builtOn = meta
+    ? new Date(meta.built).toLocaleDateString("en-IE", { day: "numeric", month: "short", year: "numeric" })
+    : null;
+
   const foot = (
     <footer className="sidebar-foot">
-      Data: National Transport Authority, CC BY 4.0.{" "}
+      Data: National Transport Authority, CC BY 4.0.
+      {builtOn && ` Updated ${builtOn}.`}{" "}
       <button className="link" onClick={() => setShowSources(true)}>
         Sources
       </button>
@@ -202,7 +225,7 @@ export default function App() {
         </div>
       </main>
 
-      {showSources && <DataSources onClose={() => setShowSources(false)} />}
+      {showSources && <DataSources meta={meta} onClose={() => setShowSources(false)} />}
     </div>
   );
 }

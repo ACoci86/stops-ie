@@ -1,0 +1,58 @@
+# Refresh the stop data every week from the NTA and boundary publishers.
+#
+# Runs on a schedule, or by hand from the Actions tab. It downloads the raw
+# files, rebuilds stops.geojson, counties.json and meta.json, checks the
+# result is sane, and commits the new files if anything changed.
+
+name: Update data
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday at 06:00 UTC
+  workflow_dispatch: # the "Run workflow" button
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download raw data
+        run: python scripts/download.py
+
+      - name: Build the stop files
+        run: python scripts/build_stops.py
+
+      - name: Check the build is sane
+        run: python scripts/check_build.py
+
+      - name: Copy into the website
+        run: cp data/processed/stops.geojson data/processed/counties.json data/processed/meta.json web/public/data/
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "stops-data-bot"
+          git config user.email "stops-data-bot@users.noreply.github.com"
+          git add web/public/data/
+          # stops.geojson and counties.json only change when the data does.
+          # meta.json always changes (it carries the build time), so we only
+          # commit when something else changed too.
+          if git diff --cached --quiet -- web/public/data/stops.geojson web/public/data/counties.json; then
+            echo "No data changes this week."
+          else
+            git commit -m "Data update: $(date -u +%Y-%m-%d)"
+            git push
+          fi

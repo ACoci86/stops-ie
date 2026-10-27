@@ -79,3 +79,11 @@ export const NO_FILTERS: Filters = {
   wheelchair: false,
   busy: false,
 };
+
+// data/processed/meta.json: when the data was built and from what.
+export interface Meta {
+  built: string; // ISO date-time
+  stops: number;
+  surveyed: number;
+  sources: Record<string, { url: string; fetched: string; last_modified: string | null }>;
+}
