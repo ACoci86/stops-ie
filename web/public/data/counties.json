@@ -333,7 +333,7 @@
    {
     "id": "8530LL10831",
     "name": "Letterkenny Bus Station",
-    "departures": 56,
+    "departures": 57,
     "lng": -7.72864,
     "lat": 54.95414
    },
@@ -1217,13 +1217,13 @@
  },
  {
   "county": "Mayo",
-  "stops": 388,
+  "stops": 399,
   "surveyed": 340,
   "bbox": [
    -10.12985,
    53.51098,
    -8.69639,
-   54.3168
+   54.33091
   ],
   "busy_no_shelter": [
    {
@@ -1281,7 +1281,7 @@
  },
  {
   "county": "Meath",
-  "stops": 548,
+  "stops": 552,
   "surveyed": 497,
   "bbox": [
    -7.16245,
