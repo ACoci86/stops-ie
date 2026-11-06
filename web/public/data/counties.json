@@ -134,7 +134,7 @@
   "bbox": [
    -9.93012,
    52.56088,
-   -8.37289,
+   -8.37292,
    53.15582
   ],
   "busy_no_shelter": [
@@ -672,18 +672,18 @@
     "lat": 53.27627
    },
    {
-    "id": "8460B5230301",
-    "name": "University South",
-    "departures": 190,
-    "lng": -9.06118,
-    "lat": 53.27639
-   },
-   {
     "id": "8460B5232301",
     "name": "College Road",
     "departures": 187,
     "lng": -9.04139,
     "lat": 53.27667
+   },
+   {
+    "id": "8460B5232401",
+    "name": "Dexcom Stadium",
+    "departures": 187,
+    "lng": -9.03778,
+    "lat": 53.27922
    }
   ],
   "shelter": {
@@ -833,7 +833,7 @@
  },
  {
   "county": "Kilkenny",
-  "stops": 268,
+  "stops": 269,
   "surveyed": 201,
   "bbox": [
    -7.60258,
@@ -1281,8 +1281,8 @@
  },
  {
   "county": "Meath",
-  "stops": 552,
-  "surveyed": 497,
+  "stops": 553,
+  "surveyed": 498,
   "bbox": [
    -7.16245,
    53.4104,
@@ -1327,19 +1327,19 @@
    }
   ],
   "shelter": {
-   "yes": 88,
+   "yes": 89,
    "no": 409
   },
   "bench": {
    "yes": 108,
-   "no": 389
+   "no": 390
   },
   "rtpi": {
    "yes": 15,
-   "no": 482
+   "no": 483
   },
   "wheelchair": {
-   "yes": 263,
+   "yes": 264,
    "no": 234
   }
  },
@@ -1793,7 +1793,7 @@
  },
  {
   "county": "Waterford",
-  "stops": 505,
+  "stops": 510,
   "surveyed": 312,
   "bbox": [
    -8.05345,
