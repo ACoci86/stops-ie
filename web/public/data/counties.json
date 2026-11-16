@@ -193,7 +193,7 @@
  },
  {
   "county": "Cork",
-  "stops": 867,
+  "stops": 868,
   "surveyed": 737,
   "bbox": [
    -10.15497,
@@ -257,7 +257,7 @@
  },
  {
   "county": "Cork City",
-  "stops": 917,
+  "stops": 918,
   "surveyed": 767,
   "bbox": [
    -8.63367,
@@ -611,8 +611,8 @@
     "id": "8470B5260101",
     "name": "Oranmore Centre",
     "departures": 35,
-    "lng": -8.92981,
-    "lat": 53.26656
+    "lng": -8.92995,
+    "lat": 53.26734
    },
    {
     "id": "8470CL11524",
@@ -641,7 +641,7 @@
  },
  {
   "county": "Galway City",
-  "stops": 440,
+  "stops": 442,
   "surveyed": 343,
   "bbox": [
    -9.12936,
@@ -897,7 +897,7 @@
  },
  {
   "county": "Laois",
-  "stops": 218,
+  "stops": 220,
   "surveyed": 182,
   "bbox": [
    -7.67734,
@@ -1153,7 +1153,7 @@
  },
  {
   "county": "Louth",
-  "stops": 404,
+  "stops": 405,
   "surveyed": 350,
   "bbox": [
    -6.58932,
@@ -1409,7 +1409,7 @@
  },
  {
   "county": "Offaly",
-  "stops": 192,
+  "stops": 193,
   "surveyed": 147,
   "bbox": [
    -8.04319,
@@ -1473,7 +1473,7 @@
  },
  {
   "county": "Roscommon",
-  "stops": 184,
+  "stops": 205,
   "surveyed": 139,
   "bbox": [
    -8.75152,
@@ -1793,7 +1793,7 @@
  },
  {
   "county": "Waterford",
-  "stops": 510,
+  "stops": 511,
   "surveyed": 312,
   "bbox": [
    -8.05345,
@@ -1940,28 +1940,28 @@
    {
     "id": "8340B3555201",
     "name": "Enniscorthy",
-    "departures": 112,
+    "departures": 114,
     "lng": -6.56432,
     "lat": 52.50149
    },
    {
     "id": "8340B3555301",
     "name": "Gorey Main Street",
-    "departures": 54,
+    "departures": 55,
     "lng": -6.29505,
     "lat": 52.67552
    },
    {
     "id": "8340B355121",
     "name": "Gorey Main Street",
-    "departures": 51,
+    "departures": 52,
     "lng": -6.29511,
     "lat": 52.67558
    },
    {
     "id": "8340LL10366",
     "name": "Wexford O'Hanrahan Station",
-    "departures": 38,
+    "departures": 39,
     "lng": -6.4651,
     "lat": 52.34319
    }
