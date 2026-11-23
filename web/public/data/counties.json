@@ -269,7 +269,7 @@
    {
     "id": "8370B2508401",
     "name": "City Hall",
-    "departures": 466,
+    "departures": 468,
     "lng": -8.46586,
     "lat": 51.89643
    },
@@ -513,7 +513,7 @@
  },
  {
   "county": "Fingal",
-  "stops": 1109,
+  "stops": 1110,
   "surveyed": 1021,
   "bbox": [
    -6.45652,
@@ -1985,7 +1985,7 @@
  },
  {
   "county": "Wicklow",
-  "stops": 521,
+  "stops": 527,
   "surveyed": 469,
   "bbox": [
    -6.71236,
